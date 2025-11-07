@@ -1,0 +1,328 @@
+{
+  "peran": [
+    { "id": 1, "nama_peran": "Guru" },
+    { "id": 2, "nama_peran": "Siswa" }
+  ],
+  "stack": [
+    { "id": 1, "nama_stack": "FE" },
+    { "id": 2, "nama_stack": "BE" }
+  ],
+  "pengguna": [
+    {
+      "id": 101,
+      "id_peran": 1,
+      "nama_lengkap": "Budi Santoso, S.Kom",
+      "no_wa": "081234567800",
+      "jenis_kelamin": "L"
+    },
+    {
+      "id": 201,
+      "id_peran": 2,
+      "nama_lengkap": "Sinta Dewi",
+      "no_wa": "081234567801",
+      "jenis_kelamin": "P"
+    },
+    {
+      "id": 202,
+      "id_peran": 2,
+      "nama_lengkap": "Andi Pratama",
+      "no_wa": "081234567802",
+      "jenis_kelamin": "L"
+    },
+    {
+      "id": 203,
+      "id_peran": 2,
+      "nama_lengkap": "Rina Amelia",
+      "no_wa": "081234567803",
+      "jenis_kelamin": "P"
+    },
+    {
+      "id": 204,
+      "id_peran": 2,
+      "nama_lengkap": "Dhimas Rizky",
+      "no_wa": "081234567804",
+      "jenis_kelamin": "L"
+    }
+  ],
+  "siswa_detail": [
+    {
+      "id": 201,
+      "nama_sekolah": "SMAN 1 Yogyakarta",
+      "jurusan": "IPA",
+      "pendidikan": "SMA",
+      "pengetahuan_koding": "Dasar"
+    },
+    {
+      "id": 202,
+      "nama_sekolah": "SMK Teladan Jakarta",
+      "jurusan": "RPL",
+      "pendidikan": "SMK",
+      "pengetahuan_koding": "Menengah"
+    },
+    {
+      "id": 203,
+      "nama_sekolah": "Universitas Gadjah Mada",
+      "jurusan": "Sistem Informasi",
+      "pendidikan": "Kuliah",
+      "pengetahuan_koding": "Menengah"
+    },
+    {
+      "id": 204,
+      "nama_sekolah": "SMA 3 Bandung",
+      "jurusan": "IPS",
+      "pendidikan": "SMA",
+      "pengetahuan_koding": "Dasar"
+    }
+  ],
+  "siswa_stack": [
+    { "id": 1, "id_pengguna": 201, "id_stack": 1 },
+    { "id": 2, "id_pengguna": 202, "id_stack": 1 },
+    { "id": 3, "id_pengguna": 203, "id_stack": 2 },
+    { "id": 4, "id_pengguna": 204, "id_stack": 2 }
+  ],
+  "materi": [
+    {
+      "id": 1,
+      "id_stack": 1,
+      "id_guru": 101,
+      "konten": "Pengenalan React dan Komponen Dasar"
+    },
+    {
+      "id": 2,
+      "id_stack": 1,
+      "id_guru": 101,
+      "konten": "React State dan Props"
+    },
+    {
+      "id": 3,
+      "id_stack": 1,
+      "id_guru": 101,
+      "konten": "Lifecycle dan Hooks (useState, useEffect)"
+    },
+    {
+      "id": 4,
+      "id_stack": 1,
+      "id_guru": 101,
+      "konten": "Styling dalam React (CSS Modules, Styled Components)"
+    },
+    {
+      "id": 5,
+      "id_stack": 1,
+      "id_guru": 101,
+      "konten": "Routing dengan React Router DOM"
+    },
+    {
+      "id": 6,
+      "id_stack": 2,
+      "id_guru": 101,
+      "konten": "Konsep RESTful API dengan Node.js"
+    },
+    {
+      "id": 7,
+      "id_stack": 2,
+      "id_guru": 101,
+      "konten": "Pengenalan Database NoSQL (MongoDB)"
+    },
+    {
+      "id": 8,
+      "id_stack": 2,
+      "id_guru": 101,
+      "konten": "Middleware dan Autentikasi JWT di Express"
+    },
+    {
+      "id": 9,
+      "id_stack": 2,
+      "id_guru": 101,
+      "konten": "CRUD Operations dengan Mongoose/Sequelize"
+    },
+    {
+      "id": 10,
+      "id_stack": 2,
+      "id_guru": 101,
+      "konten": "Testing Backend (Unit dan Integration Testing)"
+    }
+  ],
+  "tugas": [
+    {
+      "id": 1,
+      "id_guru": 101,
+      "id_stack": 1,
+      "soal": "Buat komponen formulir login responsif.",
+      "deskripsi": "Buat komponen formulir login lengkap (username/email, password, tombol submit). Komponen ini harus responsif, menyesuaikan tampilan di berbagai ukuran layar (desktop, tablet, mobile) menggunakan CSS (media queries, flexbox/grid)."
+    },
+    {
+      "id": 2,
+      "id_guru": 101,
+      "id_stack": 1,
+      "soal": "Implementasikan to-do list sederhana menggunakan state.",
+      "deskripsi": "Buat aplikasi To-Do List fungsional yang dapat menambahkan, menghapus, dan menandai tugas (sebagai selesai). Data tugas harus dikelola menggunakan lokal state komponen (e.g., useState di React)."
+    },
+    {
+      "id": 3,
+      "id_guru": 101,
+      "id_stack": 1,
+      "soal": "Redesain halaman utama menggunakan Styled Components.",
+      "deskripsi": "Ambil halaman utama yang sudah ada atau buat satu, lalu aplikasikan styling secara eksklusif menggunakan pustaka Styled Components. Pastikan styling komponen terisolasi (scoped)."
+    },
+    {
+      "id": 4,
+      "id_guru": 101,
+      "id_stack": 2,
+      "soal": "Buat 5 endpoint RESTful API untuk manajemen user.",
+      "deskripsi": "Buat server (e.g., Node.js/Express) dan definisikan minimal 5 endpoint standar RESTful (GET, POST, PUT, DELETE) untuk mengelola entitas Pengguna (User)."
+    },
+    {
+      "id": 5,
+      "id_guru": 101,
+      "id_stack": 2,
+      "soal": "Implementasikan autentikasi login dengan JWT.",
+      "deskripsi": "Terapkan proses login dan registrasi di server. Setelah login berhasil, server harus membuat dan mengirimkan JSON Web Token (JWT). Lindungi endpoint sensitif agar hanya dapat diakses dengan JWT yang valid."
+    },
+    {
+      "id": 6,
+      "id_guru": 101,
+      "id_stack": 2,
+      "soal": "Hubungkan API ke database MongoDB dan lakukan operasi CRUD.",
+      "deskripsi": "Integrasikan server API dengan database MongoDB (e.g., menggunakan Mongoose). Modifikasi endpoint yang ada untuk menyimpan, mengambil, memperbarui, dan menghapus data (operasi CRUD) secara persisten di MongoDB."
+    }
+  ],
+  "ujian": [
+    {
+      "id": 10,
+      "id_guru": 101,
+      "id_stack": 1,
+      "soal": "Ujian Tahap 1 Frontend: HTML & CSS Dasar dan Konsep Flexbox/Grid.",
+      "keterangan": "Ujian format pilihan ganda/esai singkat yang menguji pemahaman dasar struktur web dan layouting."
+    },
+    {
+      "id": 11,
+      "id_guru": 101,
+      "id_stack": 1,
+      "soal": "Ujian Tahap 2 Frontend: Pengelolaan State dan Data Fetching Dasar di React.",
+      "keterangan": "Ujian praktik yang melibatkan pembuatan komponen fungsional dan penggunaan hooks dasar (useState, useEffect) untuk mengambil dan memanipulasi data dummy."
+    },
+    {
+      "id": 1,
+      "id_guru": 101,
+      "id_stack": 1,
+      "soal": "Ujian Akhir Modul Frontend: State Management (Contoh: Redux/Context API).",
+      "keterangan": "Tugas akhir yang berfokus pada implementasi solusi State Management yang kompleks pada aplikasi mini (e.g., e-commerce sederhana)."
+    },
+    {
+      "id": 20,
+      "id_guru": 101,
+      "id_stack": 2,
+      "soal": "Ujian Tahap 1 Backend: Konsep Dasar Node.js, Express, dan Protokol HTTP.",
+      "keterangan": "Ujian pilihan ganda/esai untuk menguji pemahaman arsitektur server, request/response cycle, dan middleware di Express."
+    },
+    {
+      "id": 21,
+      "id_guru": 101,
+      "id_stack": 2,
+      "soal": "Ujian Tahap 2 Backend: Integrasi Database dan Operasi CRUD.",
+      "keterangan": "Ujian praktik untuk membuat API yang terhubung dengan database (misal: MongoDB/PostgreSQL) dan mampu menjalankan operasi Create, Read, Update, Delete secara fungsional."
+    },
+    {
+      "id": 2,
+      "id_guru": 101,
+      "id_stack": 2,
+      "soal": "Ujian Akhir Modul Backend: Design Database dan Security (Autentikasi JWT).",
+      "keterangan": "Tugas akhir yang berfokus pada perancangan skema database yang efisien, implementasi autentikasi menggunakan JWT, dan penanganan otorisasi pada seluruh endpoint API."
+    }
+  ],
+  "sesi_presensi": [
+    {
+      "id": 1,
+      "id_guru": 101,
+      "tanggal": "2025-11-03",
+      "token_unik": "ABC-123"
+    },
+    {
+      "id": 2,
+      "id_guru": 101,
+      "tanggal": "2025-11-04",
+      "token_unik": "XYZ-456"
+    }
+  ],
+  "progres_materi": [
+    { "id": 1, "id_pengguna": 201, "id_materi": 1, "status": "sudah" },
+    { "id": 2, "id_pengguna": 202, "id_materi": 1, "status": "sudah" },
+    { "id": 3, "id_pengguna": 202, "id_materi": 2, "status": "sudah" },
+    { "id": 4, "id_pengguna": 203, "id_materi": 6, "status": "sudah" },
+    { "id": 5, "id_pengguna": 204, "id_materi": 6, "status": "sudah" }
+  ],
+  "hasil_tugas": [
+    { "id": 1, "id_pengguna": 201, "id_tugas": 1, "nilai": 85 },
+    { "id": 2, "id_pengguna": 202, "id_tugas": 1, "nilai": 90 },
+    { "id": 3, "id_pengguna": 203, "id_tugas": 4, "nilai": 78 },
+    { "id": 4, "id_pengguna": 204, "id_tugas": 4, "nilai": 82 }
+  ],
+  "hasil_ujian": [
+    { "id": 1, "id_pengguna": 201, "id_ujian": 1, "nilai": 0 },
+    { "id": 2, "id_pengguna": 202, "id_ujian": 1, "nilai": 0 },
+    { "id": 3, "id_pengguna": 203, "id_ujian": 2, "nilai": 0 }
+  ],
+  "kehadiran": [
+    {
+      "id": 1,
+      "id_pengguna": 201,
+      "id_sesi": 1,
+      "waktu_masuk": "2025-11-03T09:05:00Z"
+    },
+    {
+      "id": 2,
+      "id_pengguna": 202,
+      "id_sesi": 1,
+      "waktu_masuk": "2025-11-03T09:02:00Z"
+    },
+    {
+      "id": 3,
+      "id_pengguna": 203,
+      "id_sesi": 2,
+      "waktu_masuk": "2025-11-04T10:01:00Z"
+    }
+  ],
+  "auth_mock": {
+    "token": "mock-jwt-token-sinta-dewi-201",
+    "user_id": 201,
+    "role": "Siswa"
+  },
+  "auth_mocks": [
+    {
+      "id": 101,
+      "role": "Guru",
+      "token": "mock-jwt-token-budi-santoso-101"
+    },
+    {
+      "id": 201,
+      "role": "Siswa",
+      "token": "mock-jwt-token-sinta-dewi-201"
+    },
+    {
+      "id": 202,
+      "role": "Siswa",
+      "token": "mock-jwt-token-andi-pratama-202"
+    },
+    {
+      "id": 203,
+      "role": "Siswa",
+      "token": "mock-jwt-token-rina-amelia-203"
+    },
+    {
+      "id": 204,
+      "role": "Siswa",
+      "token": "mock-jwt-token-dhimas-rizky-204"
+    }
+  ],
+  "profile_mock": {
+    "id": 201,
+    "role": "Siswa",
+    "nama_lengkap": "Sinta Dewi",
+    "no_wa": "081234567801",
+    "stack": "FE",
+    "detail": {
+      "nama_sekolah": "SMAN 1 Yogyakarta",
+      "pengetahuan_koding": "Dasar"
+    }
+  }
+}

@@ -1,0 +1,772 @@
+{
+  "calonsiswa": [
+    {
+      "id": "9afdjIf7J-lbjfVxJI6cu",
+      "batch": "b9",
+      "stack": "1",
+      "namaLengkap": "Annas",
+      "tanggalLahir": "2001-12-13",
+      "jenisKelamin": "pria",
+      "nomorHP": "87128172781",
+      "namaInstitusi": "SMK SMTI Yogyakarta",
+      "pendidikan": "SMA",
+      "jurusan": "Teknik",
+      "pengetahuan": "nol"
+    }
+  ],
+  "users": [
+    {
+      "id": 101,
+      "role": "Guru",
+      "nama_lengkap": "Nemo",
+      "no_wa": "81234567800",
+      "jenis_kelamin": "L",
+      "stack": null,
+      "detail_siswa": null
+    },
+    {
+      "id": 201,
+      "role": "Siswa",
+      "nama_lengkap": "Annas",
+      "no_wa": "81234567801",
+      "jenis_kelamin": "P",
+      "stack": "FE",
+      "detail_siswa": {
+        "nama_sekolah": "SMAN 1 Yogyakarta",
+        "jurusan": "IPA",
+        "pendidikan": "SMA",
+        "pengetahuan_koding": "Dasar"
+      }
+    },
+    {
+      "id": 202,
+      "role": "Siswa",
+      "nama_lengkap": "Soleh",
+      "no_wa": "81234567802",
+      "jenis_kelamin": "L",
+      "stack": "FE",
+      "detail_siswa": {
+        "nama_sekolah": "SMK Teladan Jakarta",
+        "jurusan": "RPL",
+        "pendidikan": "SMK",
+        "pengetahuan_koding": "Menengah"
+      }
+    },
+    {
+      "id": 203,
+      "role": "Siswa",
+      "nama_lengkap": "Pipit",
+      "no_wa": "81234567803",
+      "jenis_kelamin": "P",
+      "stack": "BE",
+      "detail_siswa": {
+        "nama_sekolah": "Universitas Gadjah Mada",
+        "jurusan": "Sistem Informasi",
+        "pendidikan": "Kuliah",
+        "pengetahuan_koding": "Menengah"
+      }
+    },
+    {
+      "id": 204,
+      "role": "Siswa",
+      "nama_lengkap": "Diaz",
+      "no_wa": "81234567804",
+      "jenis_kelamin": "L",
+      "stack": "BE",
+      "detail_siswa": {
+        "nama_sekolah": "SMA 3 Bandung",
+        "jurusan": "IPS",
+        "pendidikan": "SMA",
+        "pengetahuan_koding": "Dasar"
+      }
+    }
+  ],
+  "materi": [
+    {
+      "id": 101,
+      "id_stack": 1,
+      "judul_materi": "Pengenalan dan Setup React",
+      "deskripsi_materi": "Mempelajari dasar-dasar React dan cara inisiasi proyek menggunakan Vite/CRA."
+    },
+    {
+      "id": 102,
+      "id_stack": 1,
+      "judul_materi": "React State dan Props",
+      "deskripsi_materi": "Memahami konsep kunci dalam React: State untuk data internal dan Props untuk komunikasi antar komponen."
+    },
+    {
+      "id": 103,
+      "id_stack": 1,
+      "judul_materi": "Lifecycle Components dan Hooks (useEffect)",
+      "deskripsi_materi": "Mempelajari siklus hidup komponen dan penggunaan Hook `useEffect` untuk side effects."
+    },
+    {
+      "id": 104,
+      "id_stack": 1,
+      "judul_materi": "Conditional Rendering dan List Rendering",
+      "deskripsi_materi": "Teknik menampilkan elemen secara kondisional dan rendering daftar data menggunakan map."
+    },
+    {
+      "id": 105,
+      "id_stack": 1,
+      "judul_materi": "Form Handling dan Controlled Components",
+      "deskripsi_materi": "Cara mengelola input form menggunakan state dan konsep controlled components."
+    },
+    {
+      "id": 201,
+      "id_stack": 2,
+      "judul_materi": "Pengenalan Java dan OOP Dasar",
+      "deskripsi_materi": "Memahami sintaks dasar Java, Class, Object, Encapsulation, Inheritance, dan Polymorphism."
+    },
+    {
+      "id": 202,
+      "id_stack": 2,
+      "judul_materi": "Collections Framework (List, Map, Set)",
+      "deskripsi_materi": "Penggunaan dan perbedaan antara struktur data utama di Java Collections Framework."
+    },
+    {
+      "id": 203,
+      "id_stack": 2,
+      "judul_materi": "Dasar-dasar Spring Boot",
+      "deskripsi_materi": "Setup proyek Spring Boot, Controller, dan konsep Inversion of Control (IoC)."
+    },
+    {
+      "id": 204,
+      "id_stack": 2,
+      "judul_materi": "Akses Data (JPA/Hibernate)",
+      "deskripsi_materi": "Mempelajari cara menghubungkan aplikasi Spring Boot ke database menggunakan JPA dan Hibernate."
+    },
+    {
+      "id": 205,
+      "id_stack": 2,
+      "judul_materi": "RESTful API Development di Java",
+      "deskripsi_materi": "Membangun endpoint API, HTTP Methods (GET, POST, PUT, DELETE), dan Response Status Codes."
+    },
+    {
+      "id": "BCMDEDtgWKE5OSGunA1RU",
+      "id_stack": 1,
+      "judul_materi": "FE Edit",
+      "deskripsi_materi": "asd"
+    },
+    {
+      "id": "yTNBNFuvNZIEz3wRd15ld",
+      "id_stack": 2,
+      "judul_materi": "BE",
+      "deskripsi_materi": "BEEE"
+    }
+  ],
+  "tugas": [
+    {
+      "id": 1,
+      "id_stack": 1,
+      "id_guru": 101,
+      "soal": "Implementasi Controlled Login Form",
+      "deskripsi": "Buat komponen 'LoginForm' dengan input username dan password. Pastikan kedua input diatur oleh state React (controlled component) dan tampilkan nilai state saat tombol 'Submit' diklik (gunakan console.log)."
+    },
+    {
+      "id": 2,
+      "id_stack": 1,
+      "id_guru": 101,
+      "soal": "Custom Hook useToggle",
+      "deskripsi": "Buat custom hook bernama 'useToggle' yang menerima nilai boolean awal dan mengembalikan array berisi nilai boolean saat ini dan fungsi 'toggle' untuk membalik nilainya. Gunakan hook ini dalam komponen untuk mengontrol status 'sidebar' yang terbuka/tertutup."
+    },
+    {
+      "id": 3,
+      "id_stack": 1,
+      "id_guru": 102,
+      "soal": "Fetch Data dan List Rendering",
+      "deskripsi": "Gunakan `useEffect` untuk melakukan permintaan GET ke API dummy (misalnya JSONPlaceholder /users) dan tampilkan daftar nama pengguna dalam list HTML (`<ul>`). Pastikan setiap item list memiliki `key` yang unik."
+    },
+    {
+      "id": 4,
+      "id_stack": 1,
+      "id_guru": 102,
+      "soal": "Conditional Rendering Navbar",
+      "deskripsi": "Buat komponen 'Navbar' yang menampilkan tombol 'Login' jika state `isLoggedIn` bernilai `false`, dan menampilkan tombol 'Logout' beserta nama pengguna jika `isLoggedIn` bernilai `true`. Sediakan tombol untuk mengubah status login."
+    },
+    {
+      "id": 5,
+      "id_stack": 1,
+      "id_guru": 101,
+      "soal": "Optimasi Pengambilan Data (Dependency Array)",
+      "deskripsi": "Buat komponen yang mengambil data dari API. Pastikan fungsi fetch data hanya dijalankan sekali saat komponen di-mount. Jelaskan pentingnya penggunaan dependency array kosong (`[]`) pada `useEffect`."
+    },
+    {
+      "id": 6,
+      "id_stack": 2,
+      "id_guru": 102,
+      "soal": "Implementasi Class dan Encapsulation",
+      "deskripsi": "Buat class Java bernama 'Karyawan' dengan properti `nama`, `usia`, dan `gaji`. Terapkan Encapsulation dengan menjadikan properti-properti tersebut `private` dan menyediakan metode `public` getter dan setter."
+    },
+    {
+      "id": 7,
+      "id_stack": 2,
+      "id_guru": 101,
+      "soal": "REST API GET All (Spring Boot)",
+      "deskripsi": "Dalam proyek Spring Boot, buat Controller dengan endpoint GET `/api/produk` yang mengembalikan semua data produk yang ada di database (simulasikan data jika belum terhubung ke database)."
+    },
+    {
+      "id": 8,
+      "id_stack": 2,
+      "id_guru": 102,
+      "soal": "Penggunaan Java Stream API",
+      "deskripsi": "Buat fungsi statis yang menerima `List<Integer>` (merepresentasikan harga produk). Gunakan Java Stream API untuk: 1) memfilter harga di atas 100, dan 2) menghitung total dari harga yang sudah difilter tersebut."
+    },
+    {
+      "id": 9,
+      "id_stack": 2,
+      "id_guru": 101,
+      "soal": "Data Persistence dengan JPA",
+      "deskripsi": "Buat entitas JPA 'Pesanan' dan Repository untuknya. Implementasikan service layer yang dapat menyimpan objek Pesanan baru ke database (asumsikan menggunakan Spring Data JPA)."
+    },
+    {
+      "id": 10,
+      "id_stack": 2,
+      "id_guru": 102,
+      "soal": "Konsep Polimorfisme (Inheritance)",
+      "deskripsi": "Buat abstract class 'Pegawai' dengan method abstract `hitungGaji()`. Buat dua subclass: 'Manager' dan 'Staf'. Override `hitungGaji()` di masing-masing subclass dengan logika perhitungan yang berbeda untuk mendemonstrasikan Polimorfisme."
+    },
+    {
+      "id": "_8xX727TaY5dnz6r-fPUc",
+      "id_stack": 2,
+      "id_guru": 101,
+      "soal": "Tugas Dummy",
+      "deskripsi": "Deskripsi rugas"
+    },
+    {
+      "id": "RdCzzQb_qebzb6e22H_gf",
+      "id_stack": 1,
+      "id_guru": 101,
+      "soal": "Tugas FE Dummy",
+      "deskripsi": "Deskripsi"
+    },
+    {
+      "id": "xPa44KvsNhqTFhrFHqF7Z",
+      "id_stack": 2,
+      "id_guru": 101,
+      "soal": "Tugas BE Baru",
+      "deskripsi": "Buat class "
+    }
+  ],
+  "ujian": [
+    {
+      "id": 1,
+      "id_stack": 1,
+      "soal": "Ujian Tahap 1: Dasar HTML & CSS",
+      "keterangan": "Ujian fundamental HTML5 dan CSS3. Buat halaman web statis responsif sederhana menggunakan Flexbox atau Grid. Tidak boleh menggunakan framework CSS. Durasi: 90 menit."
+    },
+    {
+      "id": 2,
+      "id_stack": 1,
+      "soal": "Ujian Tahap 2: JavaScript Modern (ES6+)",
+      "keterangan": "Uji kemampuan dalam ES6+ (Arrow Functions, Destructuring, Promises, Async/Await). Selesaikan 5 tantangan coding JavaScript murni yang melibatkan manipulasi array dan asynchronous operation. Durasi: 120 menit."
+    },
+    {
+      "id": 3,
+      "id_stack": 1,
+      "soal": "Ujian Tahap 3: Framework React Lanjutan",
+      "keterangan": "Ujian akhir React. Kembangkan aplikasi mini (misal To-do List atau Kalkulator) menggunakan `useState`, `useEffect`, dan routing (`react-router`). Fokus pada clean code dan manajemen state. Durasi: 180 menit."
+    },
+    {
+      "id": 6,
+      "id_stack": 2,
+      "soal": "Ujian Tahap 1: Java OOP dan Fundamental",
+      "keterangan": "Ujian dasar Java. Buat 3 class dengan menerapkan prinsip OOP (Inheritance, Polymorphism) dan gunakan Java Collections untuk menyimpan dan memproses data. Durasi: 120 menit."
+    },
+    {
+      "id": 7,
+      "id_stack": 2,
+      "soal": "Ujian Tahap 2: Database dan JDBC/JPA Dasar",
+      "keterangan": "Buat skema database sederhana (misal, tabel 'Users' dan 'Orders'). Tulis kode Java untuk koneksi ke database menggunakan JDBC atau entitas JPA untuk melakukan operasi CRUD dasar. Durasi: 150 menit."
+    },
+    {
+      "id": 8,
+      "id_stack": 2,
+      "soal": "Ujian Tahap 3: RESTful API Spring Boot",
+      "keterangan": "Ujian akhir Backend. Kembangkan RESTful API lengkap menggunakan Spring Boot. API harus memiliki endpoint GET, POST, PUT, dan DELETE untuk entitas 'Produk'. Gunakan service layer dan repository. Durasi: 240 menit."
+    }
+  ],
+  "progres_materi": [
+    {
+      "id": 1,
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_materi": 1,
+      "nama_materi": "Pengenalan React dan Komponen Dasar",
+      "status": "sudah"
+    },
+    {
+      "id": 2,
+      "id_pengguna": 202,
+      "nama_pengguna": "Andi Pratama",
+      "id_materi": 1,
+      "nama_materi": "Pengenalan React dan Komponen Dasar",
+      "status": "sudah"
+    },
+    {
+      "id": 3,
+      "id_pengguna": 202,
+      "nama_pengguna": "Andi Pratama",
+      "id_materi": 2,
+      "nama_materi": "React State dan Props",
+      "status": "sudah"
+    },
+    {
+      "id": 4,
+      "id_pengguna": 203,
+      "nama_pengguna": "Rina Amelia",
+      "id_materi": 6,
+      "nama_materi": "Konsep RESTful API dengan Node.js",
+      "status": "sudah"
+    },
+    {
+      "id": 5,
+      "id_pengguna": 204,
+      "nama_pengguna": "Dhimas Rizky",
+      "id_materi": 6,
+      "nama_materi": "Konsep RESTful API dengan Node.js",
+      "status": "sudah"
+    }
+  ],
+  "hasil_tugas": [
+    {
+      "id": 1,
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_tugas": 1,
+      "nilai": 50
+    },
+    {
+      "id": 2,
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_tugas": 2,
+      "nilai": 88
+    },
+    {
+      "id": 3,
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_tugas": 3,
+      "nilai": 95
+    },
+    {
+      "id": 4,
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_tugas": 4,
+      "nilai": 72
+    },
+    {
+      "id": 5,
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_tugas": 5,
+      "nilai": 80
+    },
+    {
+      "id": 6,
+      "id_pengguna": 202,
+      "nama_pengguna": "Soleh",
+      "id_tugas": 1,
+      "nilai": 90
+    },
+    {
+      "id": 7,
+      "id_pengguna": 202,
+      "nama_pengguna": "Soleh",
+      "id_tugas": 2,
+      "nilai": 78
+    },
+    {
+      "id": 8,
+      "id_pengguna": 202,
+      "nama_pengguna": "Soleh",
+      "id_tugas": 3,
+      "nilai": 92
+    },
+    {
+      "id": 9,
+      "id_pengguna": 202,
+      "nama_pengguna": "Soleh",
+      "id_tugas": 4,
+      "nilai": 85
+    },
+    {
+      "id": 10,
+      "id_pengguna": 202,
+      "nama_pengguna": "Soleh",
+      "id_tugas": 5,
+      "nilai": 75
+    },
+    {
+      "id": 11,
+      "id_pengguna": 203,
+      "nama_pengguna": "Pipit",
+      "id_tugas": 6,
+      "nilai": 80
+    },
+    {
+      "id": 12,
+      "id_pengguna": 203,
+      "nama_pengguna": "Pipit",
+      "id_tugas": 7,
+      "nilai": 95
+    },
+    {
+      "id": 13,
+      "id_pengguna": 203,
+      "nama_pengguna": "Pipit",
+      "id_tugas": 8,
+      "nilai": 88
+    },
+    {
+      "id": 14,
+      "id_pengguna": 203,
+      "nama_pengguna": "Pipit",
+      "id_tugas": 9,
+      "nilai": 70
+    },
+    {
+      "id": 15,
+      "id_pengguna": 203,
+      "nama_pengguna": "Pipit",
+      "id_tugas": 10,
+      "nilai": 91
+    },
+    {
+      "id": 16,
+      "id_pengguna": 203,
+      "nama_pengguna": "Pipit",
+      "id_tugas": "_8xX727TaY5dnz6r-fPUc",
+      "nilai": 82
+    },
+    {
+      "id": 17,
+      "id_pengguna": 204,
+      "nama_pengguna": "Diaz",
+      "id_tugas": 6,
+      "nilai": 93
+    },
+    {
+      "id": 18,
+      "id_pengguna": 204,
+      "nama_pengguna": "Diaz",
+      "id_tugas": 7,
+      "nilai": 81
+    },
+    {
+      "id": 19,
+      "id_pengguna": 204,
+      "nama_pengguna": "Diaz",
+      "id_tugas": 8,
+      "nilai": 77
+    },
+    {
+      "id": 20,
+      "id_pengguna": 204,
+      "nama_pengguna": "Diaz",
+      "id_tugas": 9,
+      "nilai": 90
+    },
+    {
+      "id": 21,
+      "id_pengguna": 204,
+      "nama_pengguna": "Diaz",
+      "id_tugas": 10,
+      "nilai": 76
+    },
+    {
+      "id": 22,
+      "id_pengguna": 204,
+      "nama_pengguna": "Diaz",
+      "id_tugas": "_8xX727TaY5dnz6r-fPUc",
+      "nilai": 85
+    },
+    {
+      "id": 23,
+      "id_pengguna": 205,
+      "nama_pengguna": "Annas",
+      "id_tugas": 1,
+      "nilai": 70
+    },
+    {
+      "id": 24,
+      "id_pengguna": 205,
+      "nama_pengguna": "Annas",
+      "id_tugas": 2,
+      "nilai": 65
+    },
+    {
+      "id": 25,
+      "id_pengguna": 205,
+      "nama_pengguna": "Annas",
+      "id_tugas": 3,
+      "nilai": 89
+    },
+    {
+      "id": 26,
+      "id_pengguna": 205,
+      "nama_pengguna": "Annas",
+      "id_tugas": 4,
+      "nilai": 98
+    },
+    {
+      "id": 27,
+      "id_pengguna": 205,
+      "nama_pengguna": "Annas",
+      "id_tugas": 5,
+      "nilai": 73
+    },
+    {
+      "id": "4GDwuCOtdjRP-syQzQ6EE",
+      "id_pengguna": 206,
+      "nama_pengguna": "Dummy Siswa",
+      "id_tugas": "RdCzzQb_qebzb6e22H_gf",
+      "nilai": "100"
+    },
+    {
+      "id": "q7RkG9vm1Y8r6WRg_CpPG",
+      "id_pengguna": 206,
+      "nama_pengguna": "Dummy Siswa",
+      "id_tugas": 5,
+      "nilai": "90"
+    },
+    {
+      "id": "REyb44DJHAwMHKFBipib_",
+      "id_pengguna": 206,
+      "nama_pengguna": "Dummy Siswa",
+      "id_tugas": 4,
+      "nilai": "10"
+    },
+    {
+      "id": "oafke_ddGnpcY99nC6Z4w",
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_tugas": "RdCzzQb_qebzb6e22H_gf",
+      "nilai": "50"
+    },
+    {
+      "id": "eqyoqX62OcCnKOgpsf44Z",
+      "id_pengguna": 202,
+      "nama_pengguna": "Soleh",
+      "id_tugas": "RdCzzQb_qebzb6e22H_gf",
+      "nilai": "50"
+    }
+  ],
+  "hasil_ujian": [
+    {
+      "id": 1,
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_ujian": 1,
+      "nilai": 85
+    },
+    {
+      "id": 2,
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_ujian": 2,
+      "nilai": 92
+    },
+    {
+      "id": 3,
+      "id_pengguna": 201,
+      "nama_pengguna": "Annas",
+      "id_ujian": 3,
+      "nilai": 78
+    },
+    {
+      "id": 4,
+      "id_pengguna": 202,
+      "nama_pengguna": "Soleh",
+      "id_ujian": 1,
+      "nilai": 95
+    },
+    {
+      "id": 5,
+      "id_pengguna": 202,
+      "nama_pengguna": "Soleh",
+      "id_ujian": 2,
+      "nilai": 88
+    },
+    {
+      "id": 6,
+      "id_pengguna": 202,
+      "nama_pengguna": "Soleh",
+      "id_ujian": 3,
+      "nilai": 91
+    },
+    {
+      "id": 7,
+      "id_pengguna": 203,
+      "nama_pengguna": "Pipit",
+      "id_ujian": 6,
+      "nilai": 82
+    },
+    {
+      "id": 8,
+      "id_pengguna": 203,
+      "nama_pengguna": "Pipit",
+      "id_ujian": 7,
+      "nilai": 90
+    },
+    {
+      "id": 9,
+      "id_pengguna": 203,
+      "nama_pengguna": "Pipit",
+      "id_ujian": 8,
+      "nilai": 75
+    },
+    {
+      "id": 10,
+      "id_pengguna": 204,
+      "nama_pengguna": "Diaz",
+      "id_ujian": 6,
+      "nilai": 77
+    },
+    {
+      "id": 11,
+      "id_pengguna": 204,
+      "nama_pengguna": "Diaz",
+      "id_ujian": 7,
+      "nilai": 86
+    },
+    {
+      "id": 12,
+      "id_pengguna": 204,
+      "nama_pengguna": "Diaz",
+      "id_ujian": 8,
+      "nilai": 94
+    },
+    {
+      "id": 13,
+      "id_pengguna": 205,
+      "nama_pengguna": "Annas",
+      "id_ujian": 1,
+      "nilai": 71
+    },
+    {
+      "id": 14,
+      "id_pengguna": 205,
+      "nama_pengguna": "Annas",
+      "id_ujian": 2,
+      "nilai": 79
+    },
+    {
+      "id": 15,
+      "id_pengguna": 205,
+      "nama_pengguna": "Annas",
+      "id_ujian": 3,
+      "nilai": 68
+    }
+  ],
+  "sesi_presensi": [
+    {
+      "tanggal": "2025-11-07",
+      "token": "TOKEN-1211834900214",
+      "id": 1
+    }
+  ],
+  "kehadiran": [
+    {
+      "id_siswa": "ID-9yOu9gJbR8X1AL2Dy29_C",
+      "nama_siswa": "Nama-qm1s5FRnULpvBhQIzWjlY",
+      "tanggal": "2025-11-06",
+      "waktu_masuk": "2025-11-06T09:29:44.723Z",
+      "id": 1
+    },
+    {
+      "id_siswa": "ID-Z50etIspnjfp9mhsrlcpY",
+      "nama_siswa": "Nama-qLyELCu2fQX8Jz5nyqiGr",
+      "tanggal": "2025-11-06",
+      "waktu_masuk": "2025-11-06T09:35:56.226Z",
+      "id": 2
+    },
+    {
+      "id_siswa": "ID-LOqGk2NUrE01tFiHcXRW1",
+      "nama_siswa": "Nama-3ewNeoJzH805FIj1--rlp",
+      "tanggal": "2025-11-06",
+      "waktu_masuk": "2025-11-06T09:35:58.819Z",
+      "id": 3
+    },
+    {
+      "id_siswa": "ID-sUAa2o_85WBRJQr1vf6tS",
+      "nama_siswa": "Nama-LxTzWMBMCqGnnBrFstzic",
+      "tanggal": "2025-11-06",
+      "waktu_masuk": "2025-11-06T09:46:59.360Z",
+      "id": 4
+    },
+    {
+      "id_siswa": "ID-Wi_C61JFv9rhhxVEx5y51",
+      "nama_siswa": "Nama-Sg5df1QOd12cmCwzVEmCD",
+      "tanggal": "2025-11-06",
+      "waktu_masuk": "2025-11-06T09:56:42.218Z",
+      "id": 5
+    },
+    {
+      "id_siswa": "ID-UHCZlXJPU-AO5Q61SaFZn",
+      "nama_siswa": "Nama-ohphC2gKsYK8ZnCDIbW0Q",
+      "tanggal": "2025-11-07",
+      "waktu_masuk": "2025-11-07T06:50:54.082Z",
+      "id": 6
+    },
+    {
+      "id_siswa": "ID-39SK3589UY9Rn6qnOShJ0",
+      "nama_siswa": "Nama-R53E2dafLNWp6pfkL2rWy",
+      "tanggal": "2025-11-07",
+      "waktu_masuk": "2025-11-07T06:51:08.524Z",
+      "id": 7
+    },
+    {
+      "id_siswa": "202",
+      "nama_siswa": "Annas",
+      "tanggal": "2025-11-07",
+      "waktu_masuk": "2025-11-07T06:55:37.516Z",
+      "id": 8
+    }
+  ],
+  "auth_mocks": [
+    {
+      "id": 101,
+      "email": "guru@g.com",
+      "password": "guru",
+      "role": "Guru",
+      "token": "eyJhbGciOiJub25lIn0.eyJuYW1hIjoiTmVtbyIsInJvbGUiOiJHdXJ1IiwiaWQiOjEwMSwiaWF0IjoxNzYyNTA5OTE3fQ."
+    },
+    {
+      "id": 201,
+      "role": "Siswa",
+      "email": "siswafe@sfe.com",
+      "password": "siswa",
+      "token": "eyJhbGciOiJub25lIn0.eyJuYW1hIjoiQW5uYXMiLCJyb2xlIjoiU2lzd2EiLCJpZCI6MjAxLCJpYXQiOjE3NjI1MDk5MTcsImlkX3N0YWNrIjoxfQ.",
+      "id_stack": 1
+    },
+    {
+      "id": 202,
+      "role": "Siswa",
+      "email": "siswabe@sbe.com",
+      "password": "siswa",
+      "token": "eyJhbGciOiJub25lIn0.eyJuYW1hIjoiS2FyaW4iLCJyb2xlIjoiU2lzd2EiLCJpZCI6MjAyLCJpYXQiOjE3NjI1MDk5MTcsImlkX3N0YWNrIjoyfQ.",
+      "id_stack": 2
+    }
+  ],
+  "register": [
+    {
+      "email": "anas@s.com",
+      "password": "annas",
+      "id": 1
+    }
+  ],
+  "profile_mock": {
+    "id": 201,
+    "role": "Siswa",
+    "nama_lengkap": "Sinta Dewi",
+    "no_wa": "81234567801",
+    "stack": "FE",
+    "detail": {
+      "nama_sekolah": "SMAN 1 Yogyakarta",
+      "pengetahuan_koding": "Dasar"
+    }
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "siswadaftar": [
+    {
+      "idsiswadaftar": "1",
+      "namalengkap": "Budi Santoso",
+      "nowa": "081234567890",
+      "jeniskelamin": "Laki-laki",
+      "namasekolah": "SMK Negeri 1 Yogyakarta",
+      "jurusan": "Rekayasa Perangkat Lunak",
+      "pengetahuankoding": "Tingkat Menengah"
+    },
+    {
+      "idsiswadaftar": "2",
+      "namalengkap": "Siti Aminah",
+      "nowa": "089876543210",
+      "jeniskelamin": "Perempuan",
+      "namasekolah": "SMA Swasta Tunas Bangsa, Yogyakarta",
+      "jurusan": "IPA",
+      "pengetahuankoding": "Tingkat Dasar"
+    },
+    {
+      "idsiswadaftar": "3",
+      "namalengkap": "Joko Susilo",
+      "nowa": "085678901234",
+      "jeniskelamin": "Laki-laki",
+      "namasekolah": "SMK 7 Yogyakarta",
+      "jurusan": "Teknik Komputer",
+      "pengetahuankoding": "Tingkat Lanjut"
+    },
+    {
+      "idsiswadaftar": "4",
+      "namalengkap": "Dewi Puspita",
+      "nowa": "081928374650",
+      "jeniskelamin": "Perempuan",
+      "namasekolah": "SMAN 5 Yogyakarta",
+      "jurusan": "IPS",
+      "pengetahuankoding": "Nol"
+    },
+    {
+      "idsiswadaftar": "5",
+      "namalengkap": "Ahmad Dani",
+      "nowa": "087654321098",
+      "jeniskelamin": "Laki-laki",
+      "namasekolah": "SMK Muhammadiyah Yogyakarta",
+      "jurusan": "Multimedia",
+      "pengetahuankoding": "Tingkat Dasar"
+    }
+  ],
+  "peran": [
+    { "idperan": "1", "namaperan": "Guru" },
+    { "idperan": "2", "namaperan": "Siswa" }
+  ],
+  "stack": [
+    { "idstack": "1", "namastack": "FE" },
+    { "idstack": "2", "namastack": "BE" }
+  ],
+  "pengguna": [
+    {
+      "idpengguna": "101",
+      "peranid": "1",
+      "namalengkap": "Nemo (Guru)",
+      "nowa": "081111111111"
+    },
+    {
+      "idpengguna": "201",
+      "peranid": "2",
+      "siswadaftarid": "1",
+      "stackid": "1",
+      "namalengkap": "Budi Santoso",
+      "jeniskelamin": "Laki-laki",
+      "nowa": "081234567890"
+    },
+    {
+      "idpengguna": "202",
+      "peranid": "2",
+      "siswadaftarid": "2",
+      "stackid": "1",
+      "namalengkap": "Siti Aminah",
+      "jeniskelamin": "Perempuan",
+      "nowa": "089876543210"
+    },
+    {
+      "idpengguna": "203",
+      "peranid": "2",
+      "siswadaftarid": "3",
+      "stackid": "2",
+      "namalengkap": "Joko Susilo",
+      "jeniskelamin": "Laki-laki",
+      "nowa": "085678901234"
+    },
+    {
+      "idpengguna": "204",
+      "peranid": "2",
+      "siswadaftarid": "4",
+      "stackid": "2",
+      "namalengkap": "Dewi Puspita",
+      "jeniskelamin": "Perempuan",
+      "nowa": "081928374650"
+    },
+    {
+      "idpengguna": "205",
+      "peranid": "2",
+      "siswadaftarid": "5",
+      "stackid": "2",
+      "namalengkap": "Ahmad Dani",
+      "jeniskelamin": "Laki-laki",
+      "nowa": "087654321098"
+    }
+  ],
+  "siswadetail": [
+    {
+      "idsiswadetail": "1",
+      "penggunaid": "201",
+      "namasekolah": "SMK Negeri 1 Yogyakarta",
+      "jurusan": "Rekayasa Perangkat Lunak",
+      "pengetahuankoding": "Tingkat Menengah"
+    },
+    {
+      "idsiswadetail": "2",
+      "penggunaid": "202",
+      "namasekolah": "SMA Swasta Tunas Bangsa, Yogyakarta",
+      "jurusan": "IPA",
+      "pengetahuankoding": "Tingkat Dasar"
+    },
+    {
+      "idsiswadetail": "3",
+      "penggunaid": "203",
+      "namasekolah": "SMK 7 Yogyakarta",
+      "jurusan": "Teknik Komputer",
+      "pengetahuankoding": "Tingkat Lanjut"
+    },
+    {
+      "idsiswadetail": "4",
+      "penggunaid": "204",
+      "namasekolah": "SMAN 5 Yogyakarta",
+      "jurusan": "IPS",
+      "pengetahuankoding": "Nol"
+    },
+    {
+      "idsiswadetail": "5",
+      "penggunaid": "205",
+      "namasekolah": "SMK Muhammadiyah Yogyakarta",
+      "jurusan": "Multimedia",
+      "pengetahuankoding": "Tingkat Dasar"
+    }
+  ],
+  "materi": [
+    {
+      "idmateri": "1",
+      "judulmateri": "Dasar-dasar HTML dan CSS",
+      "stackid": "1",
+      "peranid": "1",
+      "deskripsimateri": "Struktur dan Gaya Web Dasar (FE)"
+    },
+    {
+      "idmateri": "2",
+      "judulmateri": "Pengenalan Javascript ES6",
+      "stackid": "1",
+      "peranid": "1",
+      "deskripsimateri": "Logika Interaktif Web (FE)"
+    },
+    {
+      "idmateri": "3",
+      "judulmateri": "Framework React JS",
+      "stackid": "1",
+      "peranid": "1",
+      "deskripsimateri": "Pembangunan Aplikasi Single Page (FE)"
+    },
+    {
+      "idmateri": "4",
+      "judulmateri": "Redux untuk State Management",
+      "stackid": "1",
+      "peranid": "1",
+      "deskripsimateri": "Pengelolaan Data Aplikasi Skala Besar (FE)"
+    },
+    {
+      "idmateri": "5",
+      "judulmateri": "Testing di Front-End (Jest/RTL)",
+      "stackid": "1",
+      "peranid": "1",
+      "deskripsimateri": "Pengujian Kode Front-End (FE)"
+    },
+    {
+      "idmateri": "6",
+      "judulmateri": "Database Relasional (SQL)",
+      "stackid": "2",
+      "peranid": "1",
+      "deskripsimateri": "Struktur dan Query Database (BE)"
+    },
+    {
+      "idmateri": "7",
+      "judulmateri": "Node.js dan Express.js",
+      "stackid": "2",
+      "peranid": "1",
+      "deskripsimateri": "Membangun Server dan API (BE)"
+    },
+    {
+      "idmateri": "8",
+      "judulmateri": "Otentikasi dan Otorisasi (JWT)",
+      "stackid": "2",
+      "peranid": "1",
+      "deskripsimateri": "Keamanan API (BE)"
+    },
+    {
+      "idmateri": "9",
+      "judulmateri": "ORM/Query Builder (Sequelize/Knex)",
+      "stackid": "2",
+      "peranid": "1",
+      "deskripsimateri": "Interaksi Database Melalui Kode (BE)"
+    },
+    {
+      "idmateri": "10",
+      "judulmateri": "Deployment Server (Docker)",
+      "stackid": "2",
+      "peranid": "1",
+      "deskripsimateri": "Persiapan Aplikasi ke Produksi (BE)"
+    }
+  ],
+  "progresmateri": [
+    {
+      "idprogresmateri": "1",
+      "penggunaid": "201",
+      "materiid": "1",
+      "status": "Selesai"
+    },
+    {
+      "idprogresmateri": "2",
+      "penggunaid": "201",
+      "materiid": "2",
+      "status": "Sedang Diproses"
+    },
+    {
+      "idprogresmateri": "3",
+      "penggunaid": "202",
+      "materiid": "1",
+      "status": "Sedang Diproses"
+    },
+    {
+      "idprogresmateri": "4",
+      "penggunaid": "203",
+      "materiid": "6",
+      "status": "Selesai"
+    },
+    {
+      "idprogresmateri": "5",
+      "penggunaid": "203",
+      "materiid": "7",
+      "status": "Selesai"
+    },
+    {
+      "idprogresmateri": "6",
+      "penggunaid": "203",
+      "materiid": "8",
+      "status": "Sedang Diproses"
+    },
+    {
+      "idprogresmateri": "7",
+      "penggunaid": "204",
+      "materiid": "6",
+      "status": "Belum Mulai"
+    }
+  ],
+  "ujian": [
+    {
+      "idujian": "1",
+      "soal": "Ujian Tahap 1: Dasar HTML/CSS",
+      "stackid": "1",
+      "deskripsiujian": "Menguji pemahaman dasar Front-End"
+    },
+    {
+      "idujian": "2",
+      "soal": "Ujian Tahap 2: Javascript dan React",
+      "stackid": "1",
+      "deskripsiujian": "Menguji pemahaman logika dan framework Front-End"
+    },
+    {
+      "idujian": "3",
+      "soal": "Ujian Tahap 3: Full Project FE",
+      "stackid": "1",
+      "deskripsiujian": "Ujian Akhir Proyek Front-End (Tidak Boleh Pakai AI)"
+    },
+    {
+      "idujian": "4",
+      "soal": "Ujian Tahap 1: Dasar Database dan Node.js",
+      "stackid": "2",
+      "deskripsiujian": "Menguji pemahaman dasar Back-End"
+    },
+    {
+      "idujian": "5",
+      "soal": "Ujian Tahap 2: API dan Keamanan",
+      "stackid": "2",
+      "deskripsiujian": "Menguji pemahaman API dan Otentikasi"
+    },
+    {
+      "idujian": "6",
+      "soal": "Ujian Tahap 3: Full Project BE",
+      "stackid": "2",
+      "deskripsiujian": "Ujian Akhir Proyek Back-End (Tidak Boleh Pakai AI)"
+    }
+  ],
+  "hasilujian": [
+    { "idhasilujian": "1", "penggunaid": "201", "ujianid": "1", "nilai": "90" },
+    { "idhasilujian": "2", "penggunaid": "202", "ujianid": "1", "nilai": "75" },
+    { "idhasilujian": "3", "penggunaid": "203", "ujianid": "4", "nilai": "88" },
+    { "idhasilujian": "4", "penggunaid": "204", "ujianid": "4", "nilai": null }
+  ],
+  "tugas": [
+    {
+      "idtugas": "1",
+      "soal": "Tugas 1: Buat halaman login sederhana.",
+      "stackid": "1",
+      "deskripsitugas": "Proyek Mini HTML/CSS"
+    },
+    {
+      "idtugas": "2",
+      "soal": "Tugas 2: Buat Kalkulator menggunakan Javascript.",
+      "stackid": "1",
+      "deskripsitugas": "Proyek Mini Javascript"
+    },
+    {
+      "idtugas": "3",
+      "soal": "Tugas 3: Integrasi API publik ke React.",
+      "stackid": "1",
+      "deskripsitugas": "Latihan React dan API"
+    },
+    {
+      "idtugas": "4",
+      "soal": "Tugas 1: Rancang Skema Database.",
+      "stackid": "2",
+      "deskripsitugas": "Latihan Database"
+    },
+    {
+      "idtugas": "5",
+      "soal": "Tugas 2: Buat API CRUD sederhana dengan Node/Express.",
+      "stackid": "2",
+      "deskripsitugas": "Latihan Back-End Dasar"
+    },
+    {
+      "idtugas": "6",
+      "soal": "Tugas 3: Implementasi JWT pada API.",
+      "stackid": "2",
+      "deskripsitugas": "Latihan Keamanan API"
+    }
+  ],
+  "hasilhasiltugas": [
+    { "idhasiltugas": "1", "penggunaid": "201", "tugasid": "1", "nilai": "85" },
+    { "idhasiltugas": "2", "penggunaid": "201", "tugasid": "2", "nilai": null },
+    { "idhasiltugas": "3", "penggunaid": "202", "tugasid": "1", "nilai": "78" },
+    { "idhasiltugas": "4", "penggunaid": "203", "tugasid": "4", "nilai": "92" },
+    { "idhasiltugas": "5", "penggunaid": "204", "tugasid": "4", "nilai": "65" },
+    { "idhasiltugas": "6", "penggunaid": "205", "tugasid": "4", "nilai": null }
+  ],
+  "sesipresensi": [
+    { "idsesipresensi": "1", "tanggal": "2025-11-05", "tokenunik": "XYZ123" }
+  ],
+  "kehadiran": [
+    {
+      "idkehadiran": "1",
+      "penggunaid": "201",
+      "waktumasuk": "2025-11-05 09:00:00",
+      "sesipresensiid": "1"
+    },
+    {
+      "idkehadiran": "2",
+      "penggunaid": "203",
+      "waktumasuk": "2025-11-05 09:05:00",
+      "sesipresensiid": "1"
+    }
+  ]
+}

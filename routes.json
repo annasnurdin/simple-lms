@@ -1,0 +1,22 @@
+{
+  "/api/auth/login": "/auth_mocks",
+  "/api/profile": "/profile_mock",
+
+  "/api/guru/materi*": "/materi",
+  "/api/guru/tugas*": "/tugas",
+  "/api/guru/ujian*": "/ujian",
+  "/api/guru/presensi/sesi*": "/sesi_presensi",
+  "/api/guru/hasil/tugas*": "/hasil_tugas",
+
+  "/api/siswa/materi": "/materi",
+  "/api/siswa/tugas": "/tugas",
+  "/api/siswa/ujian": "/ujian",
+
+  "/api/siswa/materi/:id/progress": "/progres_materi",
+  "/api/siswa/tugas/:id/submit": "/hasil_tugas",
+  "/api/siswa/ujian/:id/submit": "/hasil_ujian",
+  "/api/siswa/presensi/hadir": "/kehadiran",
+
+  "/api/siswa/laporan/nilai": "/hasil_tugas",
+  "/api/siswa/laporan/progres": "/progres_materi"
+}

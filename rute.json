@@ -1,0 +1,4 @@
+{
+  "/auth/login": "/auth_mocks",
+  "/auth/siswa/login": "/auth_guru"
+}
