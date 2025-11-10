@@ -29,7 +29,7 @@
       "role": "Siswa",
       "nama_lengkap": "Annas",
       "no_wa": "81234567801",
-      "jenis_kelamin": "P",
+      "jenis_kelamin": "L",
       "stack": "FE",
       "detail_siswa": {
         "nama_sekolah": "SMAN 1 Yogyakarta",
@@ -85,8 +85,8 @@
     {
       "id": 101,
       "id_stack": 1,
-      "judul_materi": "Pengenalan dan Setup React",
-      "deskripsi_materi": "Mempelajari dasar-dasar React dan cara inisiasi proyek menggunakan Vite/CRA."
+      "judul_materi": "Introduction to Front-End Development",
+      "deskripsi_materi": "# Pengantar Pengembangan Front-End\nPengembangan **Front-End** adalah praktik membuat bagian dari situs web atau aplikasi yang **berinteraksi langsung dengan pengguna**. Ini adalah semua yang dilihat dan diinteraksi oleh pengguna di browser, mulai dari tata letak, warna, teks, hingga tombol.\n\n---\n\n## Tujuan Pembelajaran\n\nSetelah mempelajari materi ini, Anda diharapkan dapat:\n\n* Memahami peran dan tanggung jawab seorang pengembang Front-End.\n* Mengenal tiga teknologi inti: **HTML, CSS, dan JavaScript**.\n* Membedakan antara Front-End (Sisi Klien) dan Back-End (Sisi Server).\n\n---\n\n## I. Peran Front-End Developer\n\nSeorang **Front-End Developer** (Pengembang Sisi Depan) berfokus pada **antarmuka pengguna (UI)** dan **pengalaman pengguna (UX)**.\n\n### Tanggung Jawab Utama:\n\n1.  **Implementasi Desain:** Menerjemahkan *mockup* visual (dari Desainer UI/UX, biasanya dalam Figma atau Sketch) menjadi kode web yang fungsional.\n2.  **Interaktivitas:** Menggunakan JavaScript untuk membuat elemen dinamis, seperti animasi, validasi formulir, dan pembaruan konten tanpa *reload*.\n3.  **Responsivitas:** Memastikan *layout* halaman berfungsi dan terlihat sempurna di semua perangkat (desktop, tablet, *smartphone*) menggunakan prinsip **Desain Responsif**.\n4.  **Performa:** Mengoptimalkan kode dan aset (gambar, *font*) agar waktu pemuatan halaman secepat mungkin.\n5.  **Aksesibilitas:** Memastikan situs dapat digunakan oleh orang-orang dengan berbagai kemampuan, sesuai standar WCAG (Web Content Accessibility Guidelines).\n\n---\n\n## II. Tiga Pilar Teknologi Inti\n\nSetiap halaman web dibangun di atas fondasi tiga bahasa utama:\n\n### 1. HTML (HyperText Markup Language)\n* **Peran:** Struktur dan Konten.\n* **Analogi:** Kerangka bangunan atau *skeleton* manusia.\n* **Fungsi:** Mendefinisikan **struktur semantik** konten. Contoh elemen:\n    * `<h1>` untuk judul utama.\n    * `<p>` untuk paragraf.\n    * `<img>` untuk gambar.\n    * `<a>` untuk *link* (tautan).\n\n### 2. CSS (Cascading Style Sheets)\n* **Peran:** Gaya dan Presentasi.\n* **Analogi:** Pakaian, warna cat, dan desain interior bangunan.\n* **Fungsi:** Mengontrol **tampilan** dokumen HTML. Ini mencakup:\n    * Warna dan *typography* (jenis dan ukuran *font*).\n    * Tata letak (menggunakan **Flexbox** dan **CSS Grid**).\n    * Efek visual, animasi, dan *spacing* (margin/padding).\n\n### 3. JavaScript (JS)\n* **Peran:** Perilaku dan Interaksi.\n* **Analogi:** Otot, sistem saraf, dan perangkat listrik yang membuat bangunan berfungsi.\n* **Fungsi:** Menambahkan **logika pemrograman** dan **interaktivitas** pada halaman. Contoh:\n    * Menampilkan/menyembunyikan elemen (misalnya, menu *dropdown*).\n    * Memproses data formulir.\n    * Berkomunikasi dengan **Back-End** melalui API.\n\n---\n\n## III. Ekosistem Modern\n\nPengembang Front-End modern sering menggunakan alat canggih untuk mengelola proyek besar:\n\n| Kategori | Contoh Teknologi | Manfaat |\n| :--- | :--- | :--- |\n| **JS Frameworks** | React, Vue.js, Angular | Membangun Aplikasi Satu Halaman (SPA) yang kompleks dan terstruktur. |\n| **CSS Frameworks** | Tailwind CSS, Bootstrap | Menyediakan komponen yang dapat digunakan kembali dan utilitas untuk *styling* cepat. |\n| **Version Control** | Git & GitHub | Mengelola sejarah kode, berkolaborasi dalam tim, dan melacak perubahan. |\n| **Build Tools** | Webpack, Vite | Menggabungkan, mengoptimalkan, dan mempersiapkan kode untuk lingkungan produksi. |\n\n---\n\n## IV. Front-End vs. Back-End\n\n| Fitur | Front-End (Sisi Klien) | Back-End (Sisi Server) |\n| :--- | :--- | :--- |\n| **Fokus** | **Antarmuka Pengguna (UI)** | **Logika Bisnis & Data** |\n| **Lokasi Berjalan** | Browser Pengguna | Server (Pusat Data) |\n| **Tugas Kunci** | Rendering UI, Menangkap Input Pengguna | Manajemen Database, Autentikasi, Pemrosesan Permintaan API |\n| **Contoh Bahasa** | HTML, CSS, JavaScript | Python, PHP, Java, Node.js (JavaScript), Database SQL/NoSQL |\n\n---\n\n## Langkah Awal Anda\n\nMulailah dengan menguasai fondasi. Anda tidak dapat membuat rumah tanpa kerangka dan desain dasar:\n\n1.  **Pelajari HTML:** Pahami semua *tag* semantik dasar.\n2.  **Pelajari CSS:** Kuasai *styling*, terutama **Flexbox** dan **Grid** untuk *layout*.\n3.  **Pelajari JavaScript:** Mulai dengan dasar-dasar pemrograman (variabel, fungsi, *loops*, DOM Manipulation)."
     },
     {
       "id": 102,
@@ -145,13 +145,13 @@
     {
       "id": "BCMDEDtgWKE5OSGunA1RU",
       "id_stack": 1,
-      "judul_materi": "FE Edit",
-      "deskripsi_materi": "asd"
+      "judul_materi": "FE ",
+      "deskripsi_materi": "Materi FE Edit\nIni materi FE\n## MATERI\n# materi\n`materi`"
     },
     {
       "id": "yTNBNFuvNZIEz3wRd15ld",
       "id_stack": 2,
-      "judul_materi": "BE",
+      "judul_materi": "BE Edit",
       "deskripsi_materi": "BEEE"
     }
   ],
@@ -288,44 +288,67 @@
   ],
   "progres_materi": [
     {
-      "id": 1,
+      "id_stack": 1,
       "id_pengguna": 201,
-      "nama_pengguna": "Annas",
-      "id_materi": 1,
-      "nama_materi": "Pengenalan React dan Komponen Dasar",
-      "status": "sudah"
+      "id_materi": 101,
+      "status": true,
+      "id": 1
     },
     {
-      "id": 2,
+      "id_stack": 1,
+      "id_pengguna": 201,
+      "id_materi": 102,
+      "status": true,
+      "id": 2
+    },
+    {
+      "id_stack": 1,
+      "id_pengguna": 201,
+      "id_materi": 103,
+      "status": true,
+      "id": 3
+    },
+    {
+      "id_stack": 1,
+      "id_pengguna": 201,
+      "id_materi": 104,
+      "status": false,
+      "id": 4
+    },
+    {
+      "id_stack": 1,
+      "id_pengguna": 201,
+      "id_materi": 105,
+      "status": false,
+      "id": 5
+    },
+    {
+      "id_stack": 1,
+      "id_pengguna": 201,
+      "id_materi": "BCMDEDtgWKE5OSGunA1RU",
+      "status": false,
+      "id": 6
+    },
+    {
+      "id_stack": 2,
       "id_pengguna": 202,
-      "nama_pengguna": "Andi Pratama",
-      "id_materi": 1,
-      "nama_materi": "Pengenalan React dan Komponen Dasar",
-      "status": "sudah"
+      "id_materi": 201,
+      "status": true,
+      "id": 7
     },
     {
-      "id": 3,
+      "id_stack": 2,
       "id_pengguna": 202,
-      "nama_pengguna": "Andi Pratama",
-      "id_materi": 2,
-      "nama_materi": "React State dan Props",
-      "status": "sudah"
+      "id_materi": 202,
+      "status": true,
+      "id": 8
     },
     {
-      "id": 4,
-      "id_pengguna": 203,
-      "nama_pengguna": "Rina Amelia",
-      "id_materi": 6,
-      "nama_materi": "Konsep RESTful API dengan Node.js",
-      "status": "sudah"
-    },
-    {
-      "id": 5,
-      "id_pengguna": 204,
-      "nama_pengguna": "Dhimas Rizky",
-      "id_materi": 6,
-      "nama_materi": "Konsep RESTful API dengan Node.js",
-      "status": "sudah"
+      "id_stack": 2,
+      "id_pengguna": 202,
+      "id_materi": 203,
+      "status": true,
+      "id": 9
     }
   ],
   "hasil_tugas": [
@@ -544,14 +567,14 @@
       "id_pengguna": 201,
       "nama_pengguna": "Annas",
       "id_tugas": "RdCzzQb_qebzb6e22H_gf",
-      "nilai": "50"
+      "nilai": "90"
     },
     {
       "id": "eqyoqX62OcCnKOgpsf44Z",
       "id_pengguna": 202,
       "nama_pengguna": "Soleh",
       "id_tugas": "RdCzzQb_qebzb6e22H_gf",
-      "nilai": "50"
+      "nilai": "0"
     }
   ],
   "hasil_ujian": [
@@ -663,8 +686,8 @@
   ],
   "sesi_presensi": [
     {
-      "tanggal": "2025-11-07",
-      "token": "TOKEN-1211834900214",
+      "tanggal": "2025-11-10",
+      "token": "TOKEN-1252687730927",
       "id": 1
     }
   ],

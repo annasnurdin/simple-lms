@@ -11,3 +11,76 @@
 .label {
   @apply block font-semibold mb-1 text-pink-600;
 }
+
+.konten-materi h1 {
+  @apply text-3xl font-extrabold mt-8 mb-4 border-b pb-2;
+}
+
+.konten-materi h2 {
+  @apply text-2xl font-bold mt-6 mb-3;
+}
+
+.konten-materi h3 {
+  @apply text-xl font-semibold mt-5 mb-2;
+}
+
+.konten-materi h4 {
+  @apply text-lg font-medium mt-4 mb-1;
+}
+
+.konten-materi p {
+  @apply mb-4 leading-relaxed;
+}
+
+.konten-materi strong {
+  @apply font-bold text-gray-800;
+}
+
+.konten-materi em {
+  @apply italic;
+}
+
+.konten-materi ul {
+  @apply list-disc ml-5 mb-4 space-y-1;
+}
+
+.konten-materi ol {
+  @apply list-decimal ml-5 mb-4 space-y-1;
+}
+
+.konten-materi li {
+  @apply pl-1;
+}
+
+.konten-materi pre {
+  @apply bg-gray-800 text-white p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.konten-materi code {
+  @apply bg-gray-200 text-red-700 px-1 py-0.5 rounded text-sm;
+}
+
+.konten-materi pre code {
+  @apply p-0 bg-transparent text-white;
+}
+
+.konten-materi a {
+  @apply text-blue-600 hover:text-blue-800 underline transition duration-150;
+}
+
+.konten-materi blockquote {
+  @apply border-l-4 border-gray-400 pl-4 py-2 my-4 italic text-gray-600;
+}
+
+.konten-materi table {
+  @apply w-full border-collapse my-4;
+}
+
+.konten-materi th,
+.konten-materi td {
+  @apply border border-gray-300 p-2 text-left;
+}
+
+.konten-materi th {
+  @apply bg-gray-100 font-semibold;
+}

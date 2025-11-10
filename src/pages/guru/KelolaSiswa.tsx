@@ -1,45 +1,39 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import api from "../../api/axios";
 import { idToStack } from "../../utils/IdStackToStack";
 import Swal from "sweetalert2";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { allsiswa, getLoading } from "../../redux/resourceSlice";
+import { fetchAllSiswa } from "../../redux/resourceThunk";
 
-type DetailSiswa = {
-  nama_sekolah: string;
-  jurusan: string;
-  pendidikan: "SMA" | "D3" | "S1" | string;
-  pengetahuan_koding: "nol" | "sedang" | "pemula" | "lanjut";
-};
-
-export type Siswa = {
-  id: number;
-  role: "Siswa" | "Guru";
-  nama_lengkap: string;
-  no_wa: string;
-  jenis_kelamin: "L" | "P" | string;
-  stack: "FE" | "BE";
-  detail_siswa: DetailSiswa;
-};
 export default function KelolaSiswa() {
-  const [daftarSiswa, setDaftarSiswa] = useState<Siswa[]>([]);
-  const [loading, setLoading] = useState(true);
+  // const [daftarSiswa, setDaftarSiswa] = useState<Siswa[]>([]);
+  // const [loading, setLoading] = useState(true);
 
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const response = await api
-        .get("/users")
-        .then((res) => res.data)
-        .then((data) => data.filter((item: Siswa) => item.role === "Siswa"));
-      // console.log(response);
-      setDaftarSiswa(response);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const dispatch = useAppDispatch();
+  const daftarSiswa = useAppSelector(allsiswa);
+  const loading = useAppSelector(getLoading);
+
+  // const fetchData = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const response = await api
+  //       .get("/users")
+  //       .then((res) => res.data)
+  //       .then((data) => data.filter((item: Siswa) => item.role === "Siswa"));
+  //     // console.log(response);
+  //     setDaftarSiswa(response);
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
   useEffect(() => {
-    fetchData();
+    // fetchData();
+    if (!daftarSiswa || daftarSiswa.length === 0) {
+      dispatch(fetchAllSiswa());
+    }
   }, []);
 
   const handleDelete = (id: string | number) => {
@@ -65,7 +59,8 @@ export default function KelolaSiswa() {
               icon: "success",
               confirmButtonText: "Baik",
             });
-            fetchData();
+            // fetchData();
+            dispatch(fetchAllSiswa());
           }
         } catch (error) {
           console.log(error);

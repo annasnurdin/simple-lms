@@ -4,16 +4,12 @@ import api from "../../api/axios";
 import { nanoid } from "@reduxjs/toolkit";
 import Swal from "sweetalert2";
 import Modal from "../../components/Modal";
-
-export interface Ujian {
-  id: number;
-  id_stack: 1 | 2;
-  soal: string;
-  keterangan: string;
-}
+import { allujian, type Ujian } from "../../redux/resourceSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { fetchAllUjian } from "../../redux/resourceThunk";
 
 export default function KelolaUjian() {
-  const [daftarUjian, setDaftarUjian] = useState<Ujian[]>([]);
+  // const [daftarUjian, setDaftarUjian] = useState<Ujian[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const [formValue, setFormValue] = useState({
@@ -23,13 +19,19 @@ export default function KelolaUjian() {
   });
   const [idEdit, setIdEdit] = useState<string | number>("");
 
-  const fetchData = async () => {
-    const response = await api.get("/ujian").then((res) => res.data);
-    // console.log(response);
-    setDaftarUjian(response);
-  };
+  const dispatch = useAppDispatch();
+  const daftarUjian = useAppSelector(allujian);
+
+  // const fetchData = async () => {
+  //   const response = await api.get("/ujian").then((res) => res.data);
+  //   // console.log(response);
+  //   setDaftarUjian(response);
+  // };
   useEffect(() => {
-    fetchData();
+    if (!daftarUjian || daftarUjian.length === 0) {
+      dispatch(fetchAllUjian());
+    }
+    // fetchData();
   }, []);
 
   const bukaModal = () => {
@@ -104,7 +106,8 @@ export default function KelolaUjian() {
         console.log(error);
       }
     }
-    fetchData();
+    // fetchData();
+    dispatch(fetchAllUjian());
   };
 
   const handleEdit = (ujian: Ujian) => {
@@ -141,7 +144,8 @@ export default function KelolaUjian() {
               icon: "success",
               confirmButtonText: "Baik",
             });
-            fetchData();
+            // fetchData();
+            dispatch(fetchAllUjian());
           }
         } catch (error) {
           console.log(error);

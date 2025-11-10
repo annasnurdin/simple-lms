@@ -4,17 +4,12 @@ import api from "../../api/axios";
 import Modal from "../../components/Modal";
 import { nanoid } from "@reduxjs/toolkit";
 import Swal from "sweetalert2";
-
-export interface Tugas {
-  id: number | string;
-  id_stack: 1 | 2;
-  id_guru: number | string;
-  soal: string;
-  deskripsi: string;
-}
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { alltugas, type Tugas } from "../../redux/resourceSlice";
+import { fetchAllTugas } from "../../redux/resourceThunk";
 
 export default function KelolaTugas() {
-  const [daftarTugas, setDaftarTugas] = useState<Tugas[]>([]);
+  // const [daftarTugas, setDaftarTugas] = useState<Tugas[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const [formValue, setFormValue] = useState({
@@ -24,13 +19,19 @@ export default function KelolaTugas() {
   });
   const [idEdit, setIdEdit] = useState<string | number>("");
 
-  const fetchData = async () => {
-    const response = await api.get("/tugas").then((res) => res.data);
-    // console.log(response);
-    setDaftarTugas(response);
-  };
+  const dispatch = useAppDispatch();
+  const daftarTugas = useAppSelector(alltugas);
+
+  // const fetchData = async () => {
+  //   const response = await api.get("/tugas").then((res) => res.data);
+  //   // console.log(response);
+  //   setDaftarTugas(response);
+  // };
   useEffect(() => {
-    fetchData();
+    if (!daftarTugas || daftarTugas.length === 0) {
+      dispatch(fetchAllTugas());
+    }
+    // fetchData();
   }, []);
 
   const bukaModal = () => {
@@ -106,7 +107,8 @@ export default function KelolaTugas() {
         console.log(error);
       }
     }
-    fetchData();
+    // fetchData();
+    dispatch(fetchAllTugas());
   };
 
   const handleEdit = (tugas: Tugas) => {
@@ -143,7 +145,8 @@ export default function KelolaTugas() {
               icon: "success",
               confirmButtonText: "Baik",
             });
-            fetchData();
+            // fetchData();
+            dispatch(fetchAllTugas());
           }
         } catch (error) {
           console.log(error);

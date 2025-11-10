@@ -1,88 +1,111 @@
 import { useEffect, useState } from "react";
 import api from "../../api/axios";
-import type { Siswa } from "./KelolaSiswa";
-import type { Tugas } from "./KelolaTugas";
-import axios from "axios";
-import type { Ujian } from "./KelolaUjian";
 import Swal from "sweetalert2";
 import { nanoid } from "@reduxjs/toolkit";
-
-type NilaiTugas = {
-  id: number | string;
-  id_pengguna: number | string;
-  nama_pengguna: string;
-  id_tugas: number | string;
-  nilai: number | string;
-};
-type NilaiUjian = {
-  id: number | string;
-  id_pengguna: number | string;
-  nama_pengguna: string;
-  id_ujian: number | string;
-  nilai: number | string;
-};
-interface TugasDanNilai extends Tugas {
-  nilai?: number | string;
-  idNilai?: string | number;
-}
-interface UjianDanNilai extends Ujian {
-  nilai?: number | string;
-  idNilai?: string | number;
-}
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import {
+  allsiswa,
+  alltugas,
+  allujian,
+  getLoading,
+  hasilUjian,
+  hasilTugas,
+  type Siswa,
+  type UjianDanNilai,
+  type TugasDanNilai,
+} from "../../redux/resourceSlice";
+import {
+  fetchAllSiswa,
+  fetchAllTugas,
+  fetchAllUjian,
+  fetchHasilTugas,
+  fetchHasilUjian,
+} from "../../redux/resourceThunk";
 
 export default function Penilaian() {
-  const [daftarSiswa, setDaftarSiswa] = useState<Siswa[]>([]);
+  // const [daftarSiswa, setDaftarSiswa] = useState<Siswa[]>([]);
+  const dispatch = useAppDispatch();
+  const loading = useAppSelector(getLoading);
+  const daftarSiswa = useAppSelector(allsiswa);
+  const daftarTugas = useAppSelector(alltugas);
+  const daftarUjian = useAppSelector(allujian);
+  const nilaiTugas = useAppSelector(hasilTugas);
+  const nilaiUjian = useAppSelector(hasilUjian);
+
   const [siswa, setSiswa] = useState<Siswa | undefined>();
 
-  const [daftarTugas, setDaftarTugas] = useState<Tugas[]>([]);
-  const [daftarUjian, setDaftarUjian] = useState<Ujian[]>([]);
+  // const [daftarTugas, setDaftarTugas] = useState<Tugas[]>([]);
 
-  const [nilaiTugas, setNilaiTugas] = useState<NilaiTugas[]>([]);
-  const [nilaiUjian, setNilaiUjian] = useState<NilaiUjian[]>([]);
+  // const [daftarUjian, setDaftarUjian] = useState<Ujian[]>([]);
+
+  // const [nilaiTugas, setNilaiTugas] = useState<NilaiTugas[]>([]);
+  // const [nilaiUjian, setNilaiUjian] = useState<NilaiUjian[]>([]);
 
   const [ujianDanNilai, setUjianDanNilai] = useState<UjianDanNilai[]>([]);
   const [tugasDanNilai, setTugasDanNilai] = useState<TugasDanNilai[]>([]);
 
   const [show, setShow] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  const fetchAllData = async () => {
-    try {
-      setLoading(true);
-      const requsers = await api.get("/users").then((res) => res.data);
-      const reqsoaltugas = await api.get("/tugas").then((res) => res.data);
-      const reqsoalujian = await api.get("/ujian").then((res) => res.data);
-      const reqhasilujian = await api
-        .get("/hasil_ujian")
-        .then((res) => res.data);
-      const reqhasiltugas = await api
-        .get("/hasil_tugas")
-        .then((res) => res.data);
+  // const fetchAllData = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const requsers = await api.get("/users").then((res) => res.data);
+  //     const reqsoaltugas = await api.get("/tugas").then((res) => res.data);
+  //     const reqsoalujian = await api.get("/ujian").then((res) => res.data);
+  //     const reqhasilujian = await api
+  //       .get("/hasil_ujian")
+  //       .then((res) => res.data);
+  //     const reqhasiltugas = await api
+  //       .get("/hasil_tugas")
+  //       .then((res) => res.data);
 
-      const [users, soaltugas, soalujian, hasilujian, hasiltugas] =
-        await axios.all([
-          requsers,
-          reqsoaltugas,
-          reqsoalujian,
-          reqhasilujian,
-          reqhasiltugas,
-        ]);
+  //     const [users, soaltugas, soalujian, hasilujian, hasiltugas] =
+  //       await axios.all([
+  //         requsers,
+  //         reqsoaltugas,
+  //         reqsoalujian,
+  //         reqhasilujian,
+  //         reqhasiltugas,
+  //       ]);
 
-      const siswa = users.filter((user: Siswa) => user.role === "Siswa");
-      setDaftarSiswa(siswa);
-      setDaftarTugas(soaltugas);
-      setDaftarUjian(soalujian);
-      setNilaiTugas(hasiltugas);
-      setNilaiUjian(hasilujian);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
+  //     const siswa = users.filter((user: Siswa) => user.role === "Siswa");
+  //     setDaftarSiswa(siswa);
+  //     setDaftarTugas(soaltugas);
+  //     setDaftarUjian(soalujian);
+  //     setNilaiTugas(hasiltugas);
+  //     setNilaiUjian(hasilujian);
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const fetchAllData = () => {
+    dispatch(fetchAllSiswa());
+    dispatch(fetchAllTugas());
+    dispatch(fetchAllUjian());
+    dispatch(fetchHasilTugas());
+    dispatch(fetchHasilUjian());
   };
-
   useEffect(() => {
-    fetchAllData();
+    // fetchAllData();
+    console.log(daftarSiswa);
+    if (
+      !daftarSiswa ||
+      daftarSiswa.length === 0 ||
+      !daftarTugas ||
+      daftarTugas.length === 0 ||
+      !daftarUjian ||
+      daftarUjian.length === 0 ||
+      !nilaiTugas ||
+      nilaiTugas.length === 0 ||
+      !nilaiUjian ||
+      nilaiUjian.length === 0
+    ) {
+      fetchAllData();
+    }
   }, []);
 
   const tampilkanNilai = (
@@ -191,8 +214,9 @@ export default function Penilaian() {
           console.log(error);
         }
       }
-      await fetchAllData();
+
       if (siswa) {
+        fetchAllData();
         tampilkanNilai(siswa.id, siswa.stack, siswa);
       }
       Swal.fire(`Nilainya ${value}`);

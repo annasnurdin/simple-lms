@@ -3,7 +3,13 @@ import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
 import type { Decoded } from "../pages/Login";
 import { useAppDispatch } from "../redux/hooks";
-import { setNama, setRole, setStack, setToken } from "../redux/authSlice";
+import {
+  setIDPengguna,
+  setNama,
+  setRole,
+  setStack,
+  setToken,
+} from "../redux/authSlice";
 
 export default function RequireAuth({ role }: { role: string }) {
   const navigate = useNavigate();
@@ -17,6 +23,7 @@ export default function RequireAuth({ role }: { role: string }) {
     dispatch(setNama(decoded.nama));
     dispatch(setRole(decoded.role));
     dispatch(setStack(decoded.id_stack));
+    dispatch(setIDPengguna(decoded.id));
   }
 
   useEffect(() => {

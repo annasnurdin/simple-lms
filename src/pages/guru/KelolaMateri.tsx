@@ -4,16 +4,12 @@ import Modal from "../../components/Modal";
 import Swal from "sweetalert2";
 import api from "../../api/axios";
 import { nanoid } from "@reduxjs/toolkit";
-
-export type Materi = {
-  id: number | string;
-  id_stack: 1 | 2;
-  judul_materi: string;
-  deskripsi_materi: string;
-};
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { allmateri, type Materi } from "../../redux/resourceSlice";
+import { fetchAllMateri } from "../../redux/resourceThunk";
 
 export default function KelolaMateri() {
-  const [daftarMateri, setDaftarMateri] = useState<Materi[]>([]);
+  // const [daftarMateri, setDaftarMateri] = useState<Materi[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const [formValue, setFormValue] = useState({
@@ -22,14 +18,19 @@ export default function KelolaMateri() {
     stack: 0,
   });
   const [idEdit, setIdEdit] = useState<string | number>("");
+  const dispatch = useAppDispatch();
+  const daftarMateri = useAppSelector(allmateri);
 
-  const fetchData = async () => {
-    const response = await api.get("/materi").then((res) => res.data);
-    // console.log(response);
-    setDaftarMateri(response);
-  };
+  // const fetchData = async () => {
+  //   const response = await api.get("/materi").then((res) => res.data);
+  //   // console.log(response);
+  //   setDaftarMateri(response);
+  // };
   useEffect(() => {
-    fetchData();
+    // fetchData();
+    if (!daftarMateri || daftarMateri.length === 0) {
+      dispatch(fetchAllMateri());
+    }
   }, []);
 
   const bukaModal = () => {
@@ -76,7 +77,8 @@ export default function KelolaMateri() {
               icon: "success",
               confirmButtonText: "Baik",
             });
-            fetchData();
+            // fetchData();
+            dispatch(fetchAllMateri());
           }
         } catch (error) {
           console.log(error);
@@ -136,7 +138,8 @@ export default function KelolaMateri() {
         console.log(error);
       }
     }
-    fetchData();
+    // fetchData();
+    dispatch(fetchAllMateri());
   };
 
   const handleChange = (
@@ -165,7 +168,7 @@ export default function KelolaMateri() {
             />
             <textarea
               name="deskripsi"
-              placeholder="Deskripsi Materi"
+              placeholder="Deskripsi Materi (pakai format markdown)"
               className="inputan h-[10em]"
               value={formValue.deskripsi}
               onChange={handleChange}

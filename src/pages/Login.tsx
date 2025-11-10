@@ -2,7 +2,7 @@ import { useState, type FormEvent } from "react";
 import api from "../api/axios";
 import Swal from "sweetalert2";
 import { useAppDispatch } from "../redux/hooks";
-import { setNama, setRole, setToken } from "../redux/authSlice";
+import { setIDPengguna, setNama, setRole, setToken } from "../redux/authSlice";
 import { jwtDecode, type JwtPayload } from "jwt-decode";
 import { useNavigate } from "react-router";
 
@@ -40,9 +40,12 @@ export default function Login() {
       localStorage.setItem("token", foundUser.token);
       localStorage.setItem("role", foundUser.role);
       dispatch(setToken(foundUser.token));
-      const decoded = jwtDecode<Decoded>(foundUser.token);
+
+      const tokenLokal = localStorage.getItem("token");
+      const decoded = jwtDecode<Decoded>(tokenLokal!);
       dispatch(setNama(decoded.nama));
-      dispatch(setRole(foundUser.role));
+      dispatch(setRole(decoded.role));
+      dispatch(setIDPengguna(decoded.id));
       Swal.fire({
         title: "Login Berhasil!",
         text: "menuju ke Dashboard",

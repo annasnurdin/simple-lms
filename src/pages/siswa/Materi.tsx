@@ -1,32 +1,60 @@
 import { useEffect, useState } from "react";
 import LeftSideBar from "./LeftSideBar";
 import MainMateri from "./MainMateri";
-import type { Materi } from "../guru/KelolaMateri";
 import api from "../../api/axios";
 import { useAppSelector } from "../../redux/hooks";
 import { getStack } from "../../redux/authSlice";
+import type { Materi } from "../../redux/resourceSlice";
+
+export interface ProgresMateri extends Materi {
+  status: boolean;
+  id_materi?: string | number;
+  id_progres: string | number | boolean;
+}
 
 export default function Materi() {
-  const [daftarMateri, setDaftarMateri] = useState<Materi[]>([]);
-  const [materiAktif, setMateriAktif] = useState<Materi>();
+  const [materiList, setMateriList] = useState<ProgresMateri[]>([]);
+  const [materiAktif, setMateriAktif] = useState<ProgresMateri>();
   const [loading, setLoading] = useState(false);
 
   const idStack = useAppSelector(getStack);
 
   const fetchData = async () => {
-    console.log(idStack);
+    // console.log(idStack);
     setLoading(true);
     try {
-      const response = await api
+      const progress = await api
+        .get("/progres_materi")
+        .then((res) => res.data)
+        .then((data) =>
+          data.filter((item: ProgresMateri) => item.id_stack == idStack)
+        );
+      const materi = await api
         .get("/materi")
         .then((res) => res.data)
         .then((data) =>
-          data.filter((item: Materi) => item.id_stack == idStack)
+          data.filter((item: ProgresMateri) => item.id_stack == idStack)
         );
+
+      const materidanprogres = materi.map((materi: Materi) => {
+        const progressItem = progress.find(
+          (item: ProgresMateri) => item.id_materi === materi.id
+        );
+        // if (progressItem) {
+        //   console.log(progressItem.id);
+        // }
+        return {
+          ...materi,
+          status: progressItem ? progressItem.status : false,
+          id_progres: progressItem ? progressItem.id : false,
+        };
+      });
       // console.log(response);
-      setDaftarMateri(response);
-      if (response && response.length > 0) {
-        setMateriAktif(response[0]);
+      // console.log(progress);
+      console.log(materidanprogres);
+      setMateriList(materidanprogres);
+      if (materi && materi.length > 0) {
+        setMateriAktif(materidanprogres[0]);
       } else {
         setMateriAktif(undefined);
       }
@@ -36,11 +64,12 @@ export default function Materi() {
       setLoading(false);
     }
   };
+
   useEffect(() => {
     fetchData();
   }, []);
 
-  const pilihMateri = (materi: Materi) => {
+  const pilihMateri = (materi: ProgresMateri) => {
     setMateriAktif(materi);
   };
 
@@ -52,16 +81,17 @@ export default function Materi() {
     );
   }
 
-  if (!materiAktif && daftarMateri.length === 0) {
+  if (!materiAktif && materiList.length === 0) {
     return <div>Tidak ada materi yang tersedia.</div>;
   }
 
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen">
       <LeftSideBar
-        materi={daftarMateri}
+        materi={materiList}
         idMateri={materiAktif!.id}
         pilihMateri={pilihMateri}
+        fetchData={fetchData}
       />
 
       <MainMateri

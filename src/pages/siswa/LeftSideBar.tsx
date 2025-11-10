@@ -1,20 +1,28 @@
 import { useState } from "react";
-import type { Materi } from "../guru/KelolaMateri";
+import type { ProgresMateri } from "./Materi";
+import api from "../../api/axios";
+import { useAppSelector } from "../../redux/hooks";
+import { getIDPengguna, getStack } from "../../redux/authSlice";
 
 type LeftSideBarProps = {
-  materi: Materi[];
+  materi: ProgresMateri[];
   idMateri: number | string | undefined;
-  pilihMateri: (materi: Materi) => void;
+  pilihMateri: (materi: ProgresMateri) => void;
+  fetchData: () => void;
 };
 
 export default function LeftSideBar({
   materi,
   idMateri,
   pilihMateri,
+  fetchData,
 }: LeftSideBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handlePilihMateri = (item: Materi) => {
+  const id_stack = useAppSelector(getStack);
+  const id_pengguna = useAppSelector(getIDPengguna);
+
+  const handlePilihMateri = (item: ProgresMateri) => {
     pilihMateri(item);
     //kalau mobile, tutup
     if (window.innerWidth < 800) {
@@ -22,9 +30,31 @@ export default function LeftSideBar({
     }
   };
 
+  const handleDoneMateri = async (
+    id_materi: string | number,
+    currentStatus: boolean,
+    idProgres: string | number | boolean
+  ) => {
+    const status = !currentStatus;
+    if (!idProgres) {
+      await api.post("/progres_materi", {
+        id_stack,
+        id_pengguna,
+        id_materi,
+        status,
+      });
+    } else {
+      await api.patch(`/progres_materi/${idProgres}`, {
+        status,
+      });
+    }
+
+    fetchData();
+  };
+
   return (
     // medium 1/3, large 20%, small full, relative biar ngangkat
-    <div className="md:w-1/3 lg:w-[20%] w-full relative">
+    <div className="md:w-1/3 lg:w-[20%] w-full relative bg-gray-800">
       {/* medium ke atas jangan tampilkan bar nya */}
       <div className="p-4 md:hidden flex justify-between items-center bg-gray-100 border-b border-gray-300">
         <h2 className="text-lg font-bold text-gray-800">Daftar Materi</h2>
@@ -43,10 +73,12 @@ export default function LeftSideBar({
 
       {/* small full width, kalau menu open, tampilkan, kalau tidak => hide */}
       <div
-        className={`w-full ${menuOpen ? "block" : "hidden"} md:block`}
+        className={`w-full ${
+          menuOpen ? "block" : "hidden"
+        } md:block md:min-h-screen`}
         id="sidebar-menu"
       >
-        <aside className="w-full bg-gray-800 text-white p-6 overflow-y-auto md:h-screen md:sticky md:top-0 shadow-xl">
+        <aside className="w-full bg-gray-800 text-white p-6 shadow-xl md:min-h-screen">
           <h2 className="text-xl font-extrabold mb-4 border-b border-gray-700 pb-2 text-blue-300">
             Frontend
           </h2>
@@ -54,7 +86,7 @@ export default function LeftSideBar({
             {materi.map((item) => (
               <li
                 key={item.id}
-                className={`
+                className={`flex justify-between
                   mb-2 p-3 rounded-lg text-sm transition-colors duration-200
                   hover:bg-gray-700 cursor-pointer 
                   ${
@@ -65,7 +97,15 @@ export default function LeftSideBar({
                 `}
                 onClick={() => handlePilihMateri(item)}
               >
-                {item.judul_materi}
+                <p>{item.judul_materi}</p>
+                <input
+                  type="checkbox"
+                  className="inputan"
+                  checked={item.status}
+                  onChange={() =>
+                    handleDoneMateri(item.id, item.status, item.id_progres)
+                  }
+                />
               </li>
             ))}
           </ul>
