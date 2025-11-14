@@ -3,31 +3,36 @@ import LeftSideBar from "./LeftSideBar";
 import MainMateri from "./MainMateri";
 import api from "../../api/axios";
 import { useAppSelector } from "../../redux/hooks";
-import { getStack } from "../../redux/authSlice";
+import { getIDPengguna, getStack } from "../../redux/authSlice";
 import type { Materi } from "../../redux/resourceSlice";
 
 export interface ProgresMateri extends Materi {
   status: boolean;
   id_materi?: string | number;
   id_progres: string | number | boolean;
+  id_pengguna: number;
 }
 
 export default function Materi() {
   const [materiList, setMateriList] = useState<ProgresMateri[]>([]);
   const [materiAktif, setMateriAktif] = useState<ProgresMateri>();
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const idStack = useAppSelector(getStack);
+  const idPengguna = useAppSelector(getIDPengguna);
 
-  const fetchData = async () => {
+  const fetchData = async (index: number) => {
     // console.log(idStack);
-    setLoading(true);
+    // setLoading(true);
     try {
       const progress = await api
         .get("/progres_materi")
         .then((res) => res.data)
         .then((data) =>
-          data.filter((item: ProgresMateri) => item.id_stack == idStack)
+          data.filter(
+            (item: ProgresMateri) =>
+              item.id_stack == idStack && item.id_pengguna == idPengguna
+          )
         );
       const materi = await api
         .get("/materi")
@@ -54,32 +59,32 @@ export default function Materi() {
       console.log(materidanprogres);
       setMateriList(materidanprogres);
       if (materi && materi.length > 0) {
-        setMateriAktif(materidanprogres[0]);
+        setMateriAktif(materidanprogres[index]);
       } else {
         setMateriAktif(undefined);
       }
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(0);
   }, []);
 
   const pilihMateri = (materi: ProgresMateri) => {
     setMateriAktif(materi);
   };
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-[70dvh]">
-        <h1 className="text-2xl font-bold">Loading Data</h1>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="flex justify-center items-center min-h-[70dvh]">
+  //       <h1 className="text-2xl font-bold">Loading Data</h1>
+  //     </div>
+  //   );
+  // }
 
   if (!materiAktif && materiList.length === 0) {
     return <div>Tidak ada materi yang tersedia.</div>;

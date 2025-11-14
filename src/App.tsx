@@ -1,13 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-// import { useAppDispatch, useAppSelector } from "./redux/hooks";
-// import { useEffect } from "react";
-// import { fetchPeran, getPeran } from "./redux/peran/peranSlice";
-
 import "./App.css";
 import LandingDaftar from "./pages/pendaftaran/LandingDaftar";
-import Login from "./pages/Login";
+import Login from "./pages/login-register/Login";
 import MainLayout from "./layout/MainLayout";
 import Dashboard from "./pages/siswa/Dashboard";
 import Admin from "./pages/guru/Admin";
@@ -28,7 +24,7 @@ import DashboardGuru from "./pages/guru/DashboardGuru";
 import CalonSiswa from "./pages/guru/CalonSiswa";
 import KelolaSiswa from "./pages/guru/KelolaSiswa";
 import Kehadiran from "./pages/guru/Kehadiran";
-import Register from "./pages/pendaftaran/Register";
+import Register from "./pages/login-register/Register";
 import RequireAuth from "./router/RequireAuth";
 
 export default function App() {

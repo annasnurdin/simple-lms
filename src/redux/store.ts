@@ -1,9 +1,8 @@
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
-import { peranSlice } from "./peran/peranSlice";
 import { authSlice } from "./authSlice";
 import { resourceSlice } from "./resourceSlice";
 
-const rootReducer = combineSlices(peranSlice, authSlice, resourceSlice);
+const rootReducer = combineSlices(authSlice, resourceSlice);
 export const store = configureStore({
   reducer: rootReducer,
 });

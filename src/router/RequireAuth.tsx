@@ -1,7 +1,7 @@
 import { jwtDecode } from "jwt-decode";
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
-import type { Decoded } from "../pages/Login";
+import type { Decoded } from "../pages/login-register/Login";
 import { useAppDispatch } from "../redux/hooks";
 import {
   setIDPengguna,

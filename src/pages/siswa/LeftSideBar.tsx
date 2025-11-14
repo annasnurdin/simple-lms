@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { startTransition, useOptimistic, useState } from "react";
 import type { ProgresMateri } from "./Materi";
 import api from "../../api/axios";
 import { useAppSelector } from "../../redux/hooks";
@@ -8,8 +8,9 @@ type LeftSideBarProps = {
   materi: ProgresMateri[];
   idMateri: number | string | undefined;
   pilihMateri: (materi: ProgresMateri) => void;
-  fetchData: () => void;
+  fetchData: (index: number) => void;
 };
+type OptimisticAction = { id: number | string; newStatus: boolean };
 
 export default function LeftSideBar({
   materi,
@@ -18,6 +19,22 @@ export default function LeftSideBar({
   fetchData,
 }: LeftSideBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [optimisticMateri, setOptimisticMateri] = useOptimistic(
+    //materi dimabil dari array ==> jadi state di callbackFN
+    materi,
+    //state ini === materi
+    //action => mau dimodifikasi bagaimana UI optimistic nya
+    (state, action: OptimisticAction) => {
+      return state.map((item) =>
+        //cari id materi yang sama dengan action.id
+        //kalau sudah ketemu, tambahkan statusnya langsung.
+        item.id === action.id ? { ...item, status: action.newStatus } : item
+      );
+    }
+  );
+  // useEffect(() => {
+  //   console.log(optimisticMateri);
+  // }, [optimisticMateri]);
 
   const id_stack = useAppSelector(getStack);
   const id_pengguna = useAppSelector(getIDPengguna);
@@ -36,20 +53,32 @@ export default function LeftSideBar({
     idProgres: string | number | boolean
   ) => {
     const status = !currentStatus;
-    if (!idProgres) {
-      await api.post("/progres_materi", {
-        id_stack,
-        id_pengguna,
-        id_materi,
-        status,
-      });
-    } else {
-      await api.patch(`/progres_materi/${idProgres}`, {
-        status,
-      });
+    const index = optimisticMateri.findIndex((item) => item.id === id_materi);
+    // console.log(index);
+    //dibungkus dalam startTransition
+    startTransition(() => {
+      setOptimisticMateri({ id: id_materi, newStatus: status });
+    });
+    try {
+      if (!idProgres) {
+        //kalau idProgress belum ada, buat baru
+        await api.post("/progres_materi", {
+          id_stack,
+          id_pengguna,
+          id_materi,
+          status,
+        });
+      } else {
+        //kalau sudah pernah centang, ubah status saja
+        await api.patch(`/progres_materi/${idProgres}`, {
+          status,
+        });
+      }
+    } catch (error) {
+      console.log(error);
     }
 
-    fetchData();
+    fetchData(index);
   };
 
   return (
@@ -80,10 +109,10 @@ export default function LeftSideBar({
       >
         <aside className="w-full bg-gray-800 text-white p-6 shadow-xl md:min-h-screen">
           <h2 className="text-xl font-extrabold mb-4 border-b border-gray-700 pb-2 text-blue-300">
-            Frontend
+            Daftar Materi
           </h2>
           <ul className="space-y-1">
-            {materi.map((item) => (
+            {optimisticMateri.map((item) => (
               <li
                 key={item.id}
                 className={`flex justify-between
