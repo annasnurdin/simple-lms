@@ -1,7 +1,11 @@
 import axios from "axios";
 
+// const api = axios.create({
+//   baseURL: "http://localhost:3000",
+// });
+
 const api = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://json-simple-lms.vercel.app",
 });
 
 // const api = axios.create({
