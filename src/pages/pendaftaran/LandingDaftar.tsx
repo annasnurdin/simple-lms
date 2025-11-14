@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import FormPendaftaran from "./FormPendaftaran";
 
 const photo1 = "https://placehold.co/600x400?text=Foto1";
@@ -135,7 +136,9 @@ export default function LandingDaftar() {
       <div
         className={`flex items-center justify-center text-center py-5 mt-5 ${"bg-blue-500"}`}
       >
-        <h1 className="font-bold text-white">Copyright 2025</h1>
+        <h1 className="font-bold text-white">
+          Copyright 2025 | <Link to={"/login"}>Login</Link>
+        </h1>
       </div>
     </>
   );
