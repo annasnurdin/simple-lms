@@ -31,6 +31,7 @@ export default function KelolaMateri() {
     if (!daftarMateri || daftarMateri.length === 0) {
       dispatch(fetchAllMateri());
     }
+    
   }, []);
 
   const bukaModal = () => {

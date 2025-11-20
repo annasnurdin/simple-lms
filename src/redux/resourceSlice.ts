@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
+  fetchAllCalonSiswa,
   fetchAllMateri,
   fetchAllProgress,
   fetchAllSiswa,
@@ -7,6 +8,7 @@ import {
   fetchAllUjian,
   fetchHasilTugas,
   fetchHasilUjian,
+  fetchKehadiran,
 } from "./resourceThunk";
 import type { RootState } from "./store";
 
@@ -47,6 +49,20 @@ export type Siswa = {
   detail_siswa: DetailSiswa;
 };
 
+export type CalonSiswa = {
+  id: string;
+  batch: string;
+  stack: "1" | "2";
+  namaLengkap: string;
+  tanggalLahir: string;
+  jenisKelamin: "wanita" | "pria";
+  nomorHP: string;
+  namaInstitusi: string;
+  pendidikan: "D3" | "S1" | "SMA";
+  jurusan: string;
+  pengetahuan: "nol" | "pemula" | "sedang" | "lanjut";
+};
+
 export type NilaiTugas = {
   id: number | string;
   id_pengguna: number | string;
@@ -60,6 +76,13 @@ export type NilaiUjian = {
   nama_pengguna: string;
   id_ujian: number | string;
   nilai: number | string;
+};
+export type SiswaHadir = {
+  id: number;
+  id_siswa: string;
+  nama_siswa: string;
+  tanggal: string;
+  waktu_masuk: string;
 };
 export interface TugasDanNilai extends Tugas {
   nilai?: number | string;
@@ -80,11 +103,12 @@ type InitState = {
   alltugas: Tugas[];
   tugasStack: Tugas[];
   allujian: Ujian[];
-  allpendaftar: [];
+  allpendaftar: CalonSiswa[];
   allsiswa: Siswa[];
   hasilTugas: NilaiTugas[];
   hasilUjian: NilaiUjian[];
   progresMateri: ProgresMateri[];
+  siswaHadir: SiswaHadir[];
   loading: boolean;
 };
 
@@ -95,6 +119,7 @@ const initialState: InitState = {
   allujian: [],
   allpendaftar: [],
   allsiswa: [],
+  siswaHadir: [],
   hasilTugas: [],
   hasilUjian: [],
   progresMateri: [],
@@ -183,6 +208,28 @@ export const resourceSlice = createSlice({
       })
       .addCase(fetchAllProgress.rejected, (state) => {
         state.loading = false;
+      })
+      //calon siswa
+      .addCase(fetchAllCalonSiswa.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchAllCalonSiswa.fulfilled, (state, action) => {
+        state.loading = false;
+        state.allpendaftar = action.payload;
+      })
+      .addCase(fetchAllCalonSiswa.rejected, (state) => {
+        state.loading = false;
+      })
+      //kehadiran
+      .addCase(fetchKehadiran.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchKehadiran.fulfilled, (state, action) => {
+        state.loading = false;
+        state.siswaHadir = action.payload;
+      })
+      .addCase(fetchKehadiran.rejected, (state) => {
+        state.loading = false;
       });
   },
 });
@@ -192,6 +239,8 @@ export const allmateri = (state: RootState) => state.resource.allmateri;
 export const alltugas = (state: RootState) => state.resource.alltugas;
 export const allujian = (state: RootState) => state.resource.allujian;
 export const allsiswa = (state: RootState) => state.resource.allsiswa;
+export const siswahadir = (state: RootState) => state.resource.siswaHadir;
+export const allpendaftar = (state: RootState) => state.resource.allpendaftar;
 export const getLoading = (state: RootState) => state.resource.loading;
 export const hasilTugas = (state: RootState) => state.resource.hasilTugas;
 export const hasilUjian = (state: RootState) => state.resource.hasilUjian;

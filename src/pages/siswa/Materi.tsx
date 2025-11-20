@@ -3,14 +3,13 @@ import LeftSideBar from "./LeftSideBar";
 import MainMateri from "./MainMateri";
 import api from "../../api/axios";
 import { useAppSelector } from "../../redux/hooks";
-import { getIDPengguna, getStack } from "../../redux/authSlice";
+import { getStack } from "../../redux/authSlice";
 import type { Materi } from "../../redux/resourceSlice";
 
 export interface ProgresMateri extends Materi {
   status: boolean;
   id_materi?: string | number;
   id_progres: string | number | boolean;
-  id_pengguna: number;
 }
 
 export default function Materi() {
@@ -19,7 +18,6 @@ export default function Materi() {
   // const [loading, setLoading] = useState(false);
 
   const idStack = useAppSelector(getStack);
-  const idPengguna = useAppSelector(getIDPengguna);
 
   const fetchData = async (index: number) => {
     // console.log(idStack);
@@ -29,10 +27,7 @@ export default function Materi() {
         .get("/progres_materi")
         .then((res) => res.data)
         .then((data) =>
-          data.filter(
-            (item: ProgresMateri) =>
-              item.id_stack == idStack && item.id_pengguna == idPengguna
-          )
+          data.filter((item: ProgresMateri) => item.id_stack == idStack)
         );
       const materi = await api
         .get("/materi")
@@ -56,7 +51,7 @@ export default function Materi() {
       });
       // console.log(response);
       // console.log(progress);
-      console.log(materidanprogres);
+      // console.log(materidanprogres);
       setMateriList(materidanprogres);
       if (materi && materi.length > 0) {
         setMateriAktif(materidanprogres[index]);

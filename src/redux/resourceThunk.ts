@@ -68,3 +68,19 @@ export const fetchAllProgress = createAsyncThunk(
     return response;
   }
 );
+
+export const fetchAllCalonSiswa = createAsyncThunk(
+  "resource/fetchAllCalonSiswa",
+  async () => {
+    const response = await api.get("/calonsiswa").then((res) => res.data);
+    return response;
+  }
+);
+
+export const fetchKehadiran = createAsyncThunk(
+  "resource/fetchKehadiran",
+  async () => {
+    const response = await api.get("/kehadiran").then((res) => res.data);
+    return response;
+  }
+);

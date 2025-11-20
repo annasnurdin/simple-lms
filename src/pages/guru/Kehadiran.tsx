@@ -1,33 +1,22 @@
-import { useEffect, useState } from "react";
-import api from "../../api/axios";
+import { useEffect } from "react";
 import { formatJamMenit } from "../../utils/FormatJam";
-
-type SiswaHadir = {
-  id: number;
-  id_siswa: string;
-  nama_siswa: string;
-  tanggal: string;
-  waktu_masuk: string;
-};
+import { getLoading, siswahadir } from "../../redux/resourceSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { fetchKehadiran } from "../../redux/resourceThunk";
 
 export default function Kehadiran() {
-  const [daftarSiswa, setDaftarSiswa] = useState<SiswaHadir[]>([]);
-  const [loading, setLoading] = useState(true);
+  // const [daftarSiswa, setDaftarSiswa] = useState<SiswaHadir[]>([]);
+  // const [loading, setLoading] = useState(true);
+  const dispatch = useAppDispatch();
+  const loading = useAppSelector(getLoading);
+  const daftarSiswa = useAppSelector(siswahadir);
 
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const response = await api.get("/kehadiran").then((res) => res.data);
-      setDaftarSiswa(response);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
   useEffect(() => {
-    fetchData();
-  }, []);
+    // fetchData();
+    if (!daftarSiswa || daftarSiswa.length === 0) {
+      dispatch(fetchKehadiran());
+    }
+  }, [dispatch, daftarSiswa]);
 
   if (loading) {
     return (

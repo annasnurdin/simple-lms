@@ -1,11 +1,7 @@
 import axios from "axios";
 
-// const api = axios.create({
-//   baseURL: "http://localhost:3000",
-// });
-
 const api = axios.create({
-  baseURL: "https://json-simple-lms.vercel.app",
+  baseURL: "http://localhost:3000",
 });
 
 // const api = axios.create({
@@ -16,18 +12,18 @@ const api = axios.create({
 //   baseURL: "https://813cw4cg-3000.asse.devtunnels.ms",
 // });
 
-api.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      config.headers["Authorization"] = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+// api.interceptors.request.use(
+//   (config) => {
+//     const token = localStorage.getItem("accessToken");
+//     if (token) {
+//       config.headers["Authorization"] = `Bearer ${token}`;
+//     }
+//     return config;
+//   },
+//   (error) => {
+//     return Promise.reject(error);
+//   }
+// );
 
 // api.interceptors.response.use(
 //   (response) => {

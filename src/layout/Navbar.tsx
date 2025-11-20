@@ -11,7 +11,6 @@ export default function Navbar({ guru }: LayoutProps) {
 
   const logOut = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("role");
     navigate("/login");
   };
   return (

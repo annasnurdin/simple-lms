@@ -141,18 +141,6 @@
       "id_stack": 2,
       "judul_materi": "RESTful API Development di Java",
       "deskripsi_materi": "Membangun endpoint API, HTTP Methods (GET, POST, PUT, DELETE), dan Response Status Codes."
-    },
-    {
-      "id": "BCMDEDtgWKE5OSGunA1RU",
-      "id_stack": 1,
-      "judul_materi": "FE ",
-      "deskripsi_materi": "Materi FE Edit\nIni materi FE\n## MATERI\n# materi\n`materi`"
-    },
-    {
-      "id": "yTNBNFuvNZIEz3wRd15ld",
-      "id_stack": 2,
-      "judul_materi": "BE Edit",
-      "deskripsi_materi": "BEEE"
     }
   ],
   "tugas": [
@@ -291,7 +279,7 @@
       "id_stack": 1,
       "id_pengguna": 201,
       "id_materi": 101,
-      "status": true,
+      "status": false,
       "id": 1
     },
     {
@@ -312,21 +300,21 @@
       "id_stack": 1,
       "id_pengguna": 201,
       "id_materi": 104,
-      "status": false,
+      "status": true,
       "id": 4
     },
     {
       "id_stack": 1,
       "id_pengguna": 201,
       "id_materi": 105,
-      "status": false,
+      "status": true,
       "id": 5
     },
     {
       "id_stack": 1,
       "id_pengguna": 201,
       "id_materi": "BCMDEDtgWKE5OSGunA1RU",
-      "status": false,
+      "status": true,
       "id": 6
     },
     {
@@ -567,14 +555,14 @@
       "id_pengguna": 201,
       "nama_pengguna": "Annas",
       "id_tugas": "RdCzzQb_qebzb6e22H_gf",
-      "nilai": "90"
+      "nilai": "50"
     },
     {
       "id": "eqyoqX62OcCnKOgpsf44Z",
       "id_pengguna": 202,
       "nama_pengguna": "Soleh",
       "id_tugas": "RdCzzQb_qebzb6e22H_gf",
-      "nilai": "0"
+      "nilai": "50"
     }
   ],
   "hasil_ujian": [
@@ -686,8 +674,8 @@
   ],
   "sesi_presensi": [
     {
-      "tanggal": "2025-11-10",
-      "token": "TOKEN-1252687730927",
+      "tanggal": "2025-11-17",
+      "token": "TOKEN-213051546711",
       "id": 1
     }
   ],

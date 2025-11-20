@@ -1,43 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import api from "../../api/axios";
 import { idToStack } from "../../utils/IdStackToStack";
 import Swal from "sweetalert2";
-
-type CalonSiswa = {
-  id: string;
-  batch: string;
-  stack: "1" | "2";
-  namaLengkap: string;
-  tanggalLahir: string;
-  jenisKelamin: "wanita" | "pria";
-  nomorHP: string;
-  namaInstitusi: string;
-  pendidikan: "D3" | "S1" | "SMA";
-  jurusan: string;
-  pengetahuan: "nol" | "pemula" | "sedang" | "lanjut";
-};
+import {
+  allpendaftar,
+  getLoading,
+  type CalonSiswa,
+} from "../../redux/resourceSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { fetchAllCalonSiswa } from "../../redux/resourceThunk";
 
 export default function CalonSiswa() {
-  const [daftarCalonSiswa, setDaftarCalonSiswa] = useState<CalonSiswa[]>([]);
-  const [loading, setLoading] = useState(true);
+  // const [daftarCalonSiswa, setDaftarCalonSiswa] = useState<CalonSiswa[]>([]);
+  // const [loading, setLoading] = useState(true);
+  const dispatch = useAppDispatch();
+  const loading = useAppSelector(getLoading);
+  const daftarCalonSiswa = useAppSelector(allpendaftar);
 
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const response = await api.get("/calonsiswa").then((res) => res.data);
-      // console.log(response);
-      setDaftarCalonSiswa(response);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
   useEffect(() => {
-    // TODO: masukkan ke Thunk
-
-    fetchData();
-  }, []);
+    if (!daftarCalonSiswa || daftarCalonSiswa.length === 0) {
+      dispatch(fetchAllCalonSiswa());
+    }
+  }, [dispatch, daftarCalonSiswa]);
 
   const hapusPendaftar = (id: string) => {
     Swal.fire({
@@ -61,7 +45,8 @@ export default function CalonSiswa() {
               text: "Calon Siswa Berhasil Dihapus",
               icon: "success",
             });
-            fetchData();
+            // fetchData();
+            dispatch(fetchAllCalonSiswa());
           }
         } catch (error) {
           console.log(error);
